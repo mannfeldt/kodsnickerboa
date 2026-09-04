@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101414" />
+    <meta name="robots" content="noindex, nofollow, noarchive" />
+    <meta
+      name="description"
+      content="Privacy policy for Patchlands, an offline-first puzzle game by Kodsnickerboa."
+    />
+    <link
+      rel="canonical"
+      href="https://mannfeldt.github.io/kodsnickerboa/patchlands/privacy/"
+    />
+    <title>Patchlands — Privacy Policy</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #161a18;
+        --muted: #66706b;
+        --line: #dfe4df;
+        --paper: #f7f8f5;
+        --white: #ffffff;
+        --forest: #142421;
+        --forest-soft: #203d37;
+        --mint: #cfe7d8;
+        --yellow: #f2d275;
+        --serif: Georgia, "Times New Roman", serif;
+        --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        line-height: 1.65;
+      }
+
+      a {
+        color: var(--forest-soft);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.16em;
+      }
+
+      a:hover {
+        color: #0a6a4c;
+      }
+
+      .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 1.5rem 2rem;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        color: var(--ink);
+        font-size: 0.92rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        position: relative;
+        display: inline-block;
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+
+      .brand-mark span {
+        position: absolute;
+        display: block;
+        width: 0.85rem;
+        height: 0.85rem;
+        border-radius: 0.18rem;
+        transform: rotate(45deg);
+      }
+
+      .brand-mark__one {
+        top: 0.05rem;
+        left: 0.47rem;
+        background: var(--forest);
+      }
+
+      .brand-mark__two {
+        bottom: 0.05rem;
+        left: 0.05rem;
+        background: var(--yellow);
+      }
+
+      .brand-mark__three {
+        right: 0.05rem;
+        bottom: 0.05rem;
+        background: #8fc7aa;
+      }
+
+      .header-note,
+      .eyebrow,
+      .meta-label {
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .header-note {
+        color: var(--muted);
+      }
+
+      .page-shell {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 2rem 4rem;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        margin: 1.2rem 0 2.5rem;
+        padding: clamp(2rem, 6vw, 5.5rem);
+        border-radius: 1.5rem;
+        background:
+          radial-gradient(circle at 88% 18%, rgba(207, 231, 216, 0.2), transparent 23%),
+          linear-gradient(135deg, #17302b 0%, var(--forest) 58%, #0d1716 100%);
+        color: var(--white);
+        box-shadow: 0 1.5rem 3rem rgba(20, 36, 33, 0.12);
+      }
+
+      .hero::after {
+        position: absolute;
+        right: 7%;
+        bottom: -18%;
+        width: 12rem;
+        height: 12rem;
+        border: 1px solid rgba(242, 210, 117, 0.38);
+        border-radius: 50%;
+        content: "";
+      }
+
+      .hero > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin: 0 0 1.4rem;
+        color: var(--mint);
+      }
+
+      .eyebrow::before {
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 50%;
+        background: var(--yellow);
+        content: "";
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        color: inherit;
+        font-weight: 700;
+        letter-spacing: -0.04em;
+      }
+
+      h1 {
+        max-width: 12ch;
+        font-size: clamp(2.6rem, 7vw, 5.8rem);
+        line-height: 0.98;
+      }
+
+      h1 em,
+      h2 em {
+        color: var(--mint);
+        font-family: var(--serif);
+        font-weight: 400;
+      }
+
+      .hero-lede {
+        max-width: 42rem;
+        margin: 1.6rem 0 0;
+        color: #d8e5de;
+        font-size: clamp(1rem, 1.7vw, 1.2rem);
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem 1.5rem;
+        margin-top: 2rem;
+        color: #a9beb4;
+      }
+
+      .meta-label {
+        color: #76968a;
+      }
+
+      .summary {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(13rem, 0.7fr);
+        gap: 2rem;
+        align-items: start;
+        margin-bottom: 3.2rem;
+        padding: 1.4rem 1.6rem;
+        border: 1px solid #c8ddd0;
+        border-radius: 1rem;
+        background: #eaf4ed;
+      }
+
+      .summary strong {
+        display: block;
+        margin-bottom: 0.25rem;
+        color: #1c5d43;
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .summary p {
+        margin: 0;
+      }
+
+      .summary .summary-side {
+        padding-left: 1.4rem;
+        border-left: 1px solid #c8ddd0;
+        color: #46665a;
+        font-size: 0.9rem;
+      }
+
+      .content-layout {
+        display: grid;
+        grid-template-columns: 13rem minmax(0, 1fr);
+        gap: clamp(2rem, 7vw, 6rem);
+        align-items: start;
+      }
+
+      .contents {
+        position: sticky;
+        top: 1.5rem;
+      }
+
+      .contents p {
+        margin: 0 0 0.7rem;
+        color: var(--muted);
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .contents ol {
+        display: grid;
+        gap: 0.4rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        counter-reset: contents;
+      }
+
+      .contents li {
+        counter-increment: contents;
+      }
+
+      .contents a {
+        display: grid;
+        grid-template-columns: 1.6rem 1fr;
+        gap: 0.4rem;
+        color: var(--muted);
+        font-size: 0.86rem;
+        text-decoration: none;
+      }
+
+      .contents a::before {
+        color: #9aa49f;
+        content: "0" counter(contents);
+        font-family: var(--mono);
+        font-size: 0.7rem;
+      }
+
+      .contents a:hover {
+        color: var(--forest-soft);
+      }
+
+      article {
+        min-width: 0;
+      }
+
+      .policy-section {
+        padding: 0 0 2.8rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .policy-section + .policy-section {
+        padding-top: 2.8rem;
+      }
+
+      .policy-section h2 {
+        color: var(--forest);
+        font-size: clamp(1.65rem, 3vw, 2.35rem);
+        line-height: 1.1;
+      }
+
+      .policy-section h3 {
+        margin-top: 1.7rem;
+        color: var(--forest-soft);
+        font-size: 1.05rem;
+        letter-spacing: -0.02em;
+      }
+
+      .policy-section p {
+        max-width: 48rem;
+        margin: 1rem 0 0;
+        color: #3f4944;
+      }
+
+      .policy-section ul {
+        display: grid;
+        gap: 0.65rem;
+        margin: 1rem 0 0;
+        padding-left: 1.25rem;
+        color: #3f4944;
+      }
+
+      .policy-section li::marker {
+        color: #5b9b7b;
+      }
+
+      .data-card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.8rem;
+        margin-top: 1.25rem;
+      }
+
+      .data-card {
+        padding: 1.1rem 1.15rem;
+        border: 1px solid var(--line);
+        border-radius: 0.8rem;
+        background: var(--white);
+      }
+
+      .data-card h3 {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      .data-card p {
+        margin-top: 0.45rem;
+        font-size: 0.9rem;
+      }
+
+      .callout {
+        margin-top: 1.2rem;
+        padding: 1rem 1.15rem;
+        border-left: 0.25rem solid var(--yellow);
+        background: #fff9e8;
+        color: #4c4633;
+      }
+
+      .callout p {
+        margin: 0;
+        color: inherit;
+        font-size: 0.92rem;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      .footer p {
+        margin: 0;
+      }
+
+      @media (max-width: 720px) {
+        .site-header,
+        .page-shell {
+          padding-right: 1.1rem;
+          padding-left: 1.1rem;
+        }
+
+        .site-header {
+          padding-top: 1.1rem;
+          padding-bottom: 1.1rem;
+        }
+
+        .header-note {
+          display: none;
+        }
+
+        .hero {
+          margin-top: 0.4rem;
+          padding: 2rem 1.35rem 2.4rem;
+          border-radius: 1.1rem;
+        }
+
+        .summary,
+        .content-layout,
+        .data-card-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .summary {
+          gap: 1rem;
+          margin-bottom: 2.5rem;
+        }
+
+        .summary .summary-side {
+          padding-top: 1rem;
+          padding-left: 0;
+          border-top: 1px solid #c8ddd0;
+          border-left: 0;
+        }
+
+        .contents {
+          position: static;
+          padding-bottom: 1.5rem;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .contents ol {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .footer {
+          display: block;
+        }
+
+        .footer p + p {
+          margin-top: 0.6rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand" aria-label="Kodsnickerboa">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brand-mark__one"></span>
+          <span class="brand-mark__two"></span>
+          <span class="brand-mark__three"></span>
+        </span>
+        <span>Kodsnickerboa</span>
+      </div>
+      <span class="header-note">Patchlands / Privacy</span>
+    </header>
+
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Patchlands · privacy policy</p>
+        <h1>Made for the table.<br /><em>Careful with your data.</em></h1>
+        <p class="hero-lede">
+          Patchlands is an offline-first puzzle game. Your games and progress
+          live on your device; a small amount of optional mobile telemetry
+          helps us understand gameplay, deliver settings, and fix crashes.
+        </p>
+        <div class="hero-meta">
+          <span><span class="meta-label">Effective</span> September 4, 2026</span>
+          <span><span class="meta-label">Operator</span> Kodsnickerboa · Sweden</span>
+        </div>
+      </header>
+
+      <aside class="summary" aria-label="Privacy summary">
+        <div>
+          <strong>Short version</strong>
+          <p>
+            Patchlands has no account system, advertising SDK, online game
+            service, cloud save, payment flow, or social login. Gameplay data,
+            player names, settings, and local high scores are stored on the
+            device. On Android and iOS, Firebase services may receive
+            pseudonymous technical and gameplay information as described below.
+          </p>
+        </div>
+        <p class="summary-side">
+          This policy describes the current mobile release and the web beta.
+          It will be updated if the app adds accounts, online play, payments,
+          advertising, or another data-collecting service.
+        </p>
+      </aside>
+
+      <div class="content-layout">
+        <nav class="contents" aria-label="Contents">
+          <p>On this page</p>
+          <ol>
+            <li><a href="#scope">Scope</a></li>
+            <li><a href="#data">Data we process</a></li>
+            <li><a href="#use">How we use it</a></li>
+            <li><a href="#sharing">Sharing</a></li>
+            <li><a href="#choices">Choices and deletion</a></li>
+            <li><a href="#rights">Your rights</a></li>
+            <li><a href="#children">Children</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ol>
+        </nav>
+
+        <article>
+          <section class="policy-section" id="scope">
+            <h2>1. Scope</h2>
+            <p>
+              This privacy policy explains how Kodsnickerboa handles
+              information in the Patchlands mobile game for Android and iOS,
+              and in the responsive web beta. Patchlands is a local-first
+              puzzle game with solo play and local, pass-and-play multiplayer.
+              The app does not currently provide online multiplayer, accounts,
+              or a profile service.
+            </p>
+            <p>
+              The policy applies to the app and not to the independent privacy
+              practices of Apple, Google, Firebase, GitHub, or the device and
+              operating-system providers you use.
+            </p>
+          </section>
+
+          <section class="policy-section" id="data">
+            <h2>2. Data we process</h2>
+            <p>
+              The information handled depends on the platform and the features
+              you use. We do not ask you to create an account or provide an
+              email address, phone number, contacts, photos, videos, precise
+              location, microphone recordings, or payment details. Local
+              multiplayer lets you enter display names, which stay on the
+              device as described below.
+            </p>
+
+            <div class="data-card-grid">
+              <div class="data-card">
+                <h3>Stored locally on your device</h3>
+                <p>
+                  Saved games, campaign progress, local high scores and
+                  replays, local multiplayer display names, selected player
+                  pieces, tutorial state, notification preference, theme,
+                  motion, haptics, speed-run, and screen-rotation settings.
+                </p>
+              </div>
+
+              <div class="data-card">
+                <h3>Gameplay analytics · mobile only</h3>
+                <p>
+                  Firebase Analytics may receive pseudonymous gameplay events
+                  such as game mode, level identifiers, player count, scores,
+                  stars, attempts, duration, board progress, Survival
+                  progress, patch identifiers, and selected non-identifying
+                  settings. Local display names are not included in these
+                  events.
+                </p>
+              </div>
+
+              <div class="data-card">
+                <h3>Crash diagnostics · mobile only</h3>
+                <p>
+                  Firebase Crashlytics may receive crash reports, stack traces,
+                  exception information, relevant app state, app version,
+                  operating-system and device information, and pseudonymous
+                  installation or session identifiers. Patchlands does not
+                  intentionally attach player names or account identifiers to
+                  crash reports.
+                </p>
+              </div>
+
+              <div class="data-card">
+                <h3>Remote settings · mobile only</h3>
+                <p>
+                  Firebase Remote Config may process a Firebase installation
+                  identifier and technical context such as country, language,
+                  time zone, platform and operating-system version, app/package
+                  version, and SDK version. It returns feature flags and
+                  gameplay-availability settings; it does not supply or store
+                  Patchlands game saves.
+                </p>
+              </div>
+
+              <div class="data-card">
+                <h3>Optional notifications · mobile only</h3>
+                <p>
+                  If you choose Enable notifications and grant the operating
+                  system's permission, Firebase Cloud Messaging may process a
+                  Firebase installation identifier and push-registration data
+                  to deliver notifications. Patchlands does not read, save, or
+                  log the messaging token. Notification payloads are not saved
+                  by the app; supported payloads can open a local Patchlands
+                  screen.
+                </p>
+              </div>
+
+              <div class="data-card">
+                <h3>Web beta</h3>
+                <p>
+                  The web beta uses browser-local storage for game data and
+                  does not initialize the mobile Firebase engagement services.
+                  Browser private mode, storage limits, or browser cleanup may
+                  remove that local data.
+                </p>
+              </div>
+            </div>
+
+            <div class="callout">
+              <p>
+                Firebase SDKs can automatically process technical information
+                needed to provide their services, such as a per-installation
+                identifier, app and device details, network information, and
+                service diagnostics. The exact fields depend on the Firebase
+                product, platform, and operating-system settings.
+              </p>
+            </div>
+          </section>
+
+          <section class="policy-section" id="use">
+            <h2>3. How we use information</h2>
+            <p>We use information only for the following purposes:</p>
+            <ul>
+              <li>
+                to run Patchlands and keep your local games, progress, and
+                settings available on your device;
+              </li>
+              <li>
+                to understand aggregate gameplay patterns and improve balance,
+                content, usability, and reliability;
+              </li>
+              <li>
+                to diagnose crashes and technical failures;
+              </li>
+              <li>
+                to deliver remotely managed feature and availability settings
+                while keeping bundled content and local saves authoritative; and
+              </li>
+              <li>
+                to deliver optional push notifications that you have enabled.
+              </li>
+            </ul>
+            <p>
+              The current Patchlands implementation does not contain an
+              advertising SDK, use telemetry to serve targeted advertising, or
+              sell personal information. Firebase and Google may process data
+              as independent service providers under their own terms and
+              privacy documentation.
+            </p>
+          </section>
+
+          <section class="policy-section" id="sharing">
+            <h2>4. Who receives information</h2>
+            <p>
+              We use Google Firebase for the mobile services described in this
+              policy:
+            </p>
+            <ul>
+              <li>Google Analytics for Firebase for pseudonymous usage analytics;</li>
+              <li>Firebase Crashlytics for crash reporting;</li>
+              <li>Firebase Remote Config for remote feature settings; and</li>
+              <li>Firebase Cloud Messaging for optional push notifications.</li>
+            </ul>
+            <p>
+              Firebase is operated by Google. Firebase may process information
+              on servers and through service providers in countries where
+              Google operates. See Google's
+              <a href="https://firebase.google.com/support/privacy/" rel="noreferrer">Firebase privacy and security information</a>
+              and
+              <a href="https://policies.google.com/privacy" rel="noreferrer">Google Privacy Policy</a>
+              for the providers' own details, controls, and current retention
+              information.
+            </p>
+            <p>
+              We do not share local game saves, local display names, or local
+              high-score tables with other players or with a Patchlands online
+              service. Apple and Google may separately process information as
+              part of their app-store, device, and notification platforms.
+            </p>
+          </section>
+
+          <section class="policy-section" id="choices">
+            <h2>5. Choices, retention, and deletion</h2>
+            <h3>Notifications</h3>
+            <p>
+              Notifications are optional. You can decline the request or turn
+              off notification permission in your device's operating-system
+              settings. Patchlands only initializes its notification handling
+              after you have enabled notifications in the app.
+            </p>
+
+            <h3>Local game data</h3>
+            <p>
+              Local game data remains on your device until you delete it. To
+              remove it, uninstall Patchlands or use your platform's clear-app-
+              data/storage controls. For the web beta, clear the site's browser
+              storage. Uninstalling or clearing local storage does not
+              retroactively remove data already sent to Firebase.
+            </p>
+
+            <h3>Firebase data</h3>
+            <p>
+              Firebase telemetry is retained by Google/Firebase according to
+              the applicable Firebase and Google Analytics settings and
+              policies. Firebase currently documents a 90-day removal period
+              beginning for Crashlytics crash traces and associated identifiers;
+              other Firebase identifiers and analytics data can have different
+              retention periods. We do not keep a separate Patchlands copy of
+              this telemetry.
+            </p>
+            <p>
+              The current release does not include an in-app switch for
+              analytics or crash reporting. If you want to ask about data
+              associated with a particular installation, contact us using the
+              method below. Because Patchlands has no account and uses
+              pseudonymous identifiers, we may not be able to identify or
+              retrieve a particular installation without sufficient
+              information.
+            </p>
+          </section>
+
+          <section class="policy-section" id="rights">
+            <h2>6. Your rights</h2>
+            <p>
+              Depending on where you live, applicable privacy law may give you
+              rights to request access to, correction of, deletion of, or
+              restriction of personal data, and to object to or limit certain
+              processing. You may also have a right to data portability or to
+              withdraw consent where processing is based on consent.
+            </p>
+            <p>
+              To exercise a right, contact Kodsnickerboa. We may need to ask
+              for information needed to understand and verify the request, and
+              we will respond within the time required by applicable law. You
+              may also complain to the data-protection authority in the country
+              where you live or work. In Sweden, this is
+              <a href="https://www.imy.se/en/" rel="noreferrer">Integritetsskyddsmyndigheten (IMY)</a>.
+            </p>
+          </section>
+
+          <section class="policy-section" id="children">
+            <h2>7. Children</h2>
+            <p>
+              Patchlands does not knowingly request names, email addresses, or
+              other directly identifying information from children. If you are
+              a parent or guardian and believe that a child has provided us
+              with personal information, please contact us so we can review the
+              request and take appropriate action.
+            </p>
+          </section>
+
+          <section class="policy-section" id="contact">
+            <h2>8. Contact and changes</h2>
+            <p>
+              The privacy point of contact is Kodsnickerboa, an independent app
+              studio in Sweden. For privacy questions or requests, contact the
+              developer through the
+              <a href="https://github.com/mannfeldt/patchlands" rel="noreferrer">Patchlands repository on GitHub</a>.
+              Please do not post sensitive personal information in a public
+              issue. If you need a private channel, ask for one without
+              including the personal details themselves.
+            </p>
+            <p>
+              We may update this policy when Patchlands' data practices change
+              or when required by law. The effective date at the top of this
+              page identifies the latest version.
+            </p>
+          </section>
+        </article>
+      </div>
+
+      <footer class="footer">
+        <p>Patchlands · Kodsnickerboa</p>
+        <p>Privacy policy URL: /patchlands/privacy/</p>
+      </footer>
+    </div>
+  </body>
+</html>
