@@ -1220,6 +1220,11 @@ h1 {
   z-index: 1;
 }
 
+.button--contact {
+  max-width: min(100%, 27rem);
+  overflow-wrap: anywhere;
+}
+
 .eyebrow--dark {
   color: rgba(16, 20, 20, 0.58);
 }
@@ -1265,7 +1270,7 @@ h1 {
 .footer-main {
   display: grid;
   align-items: center;
-  grid-template-columns: 1fr 1fr auto;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto auto;
   gap: 2rem;
   padding-block: 2.2rem;
 }
@@ -1278,6 +1283,19 @@ h1 {
   margin: 0;
   color: var(--muted);
   font-size: 0.74rem;
+}
+
+.footer-contact {
+  color: var(--cream);
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.02em;
+  overflow-wrap: anywhere;
+}
+
+.footer-contact:hover,
+.footer-contact:focus-visible {
+  color: var(--sage);
 }
 
 .footer-main .mono-label {
@@ -1598,6 +1616,11 @@ h1 {
 
   .footer-caption {
     order: 3;
+    width: 100%;
+  }
+
+  .footer-contact {
+    order: 4;
     width: 100%;
   }
 }

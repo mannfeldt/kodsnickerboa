@@ -13,7 +13,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Untitled site',
+  metadataBase: new URL('https://kodsnickerboa.com'),
+  title: 'Kodsnickerboa — Independent app studio',
+  description:
+    'Thoughtful software for everyday life, play, and the places in between.',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Kodsnickerboa — Independent app studio',
+    description:
+      'Thoughtful software for everyday life, play, and the places in between.',
+    url: 'https://kodsnickerboa.com/',
+    siteName: 'Kodsnickerboa',
+    type: 'website',
+    images: ['/assets/images/kodsnickerboa-hero.webp'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kodsnickerboa — Independent app studio',
+    description:
+      'Thoughtful software for everyday life, play, and the places in between.',
+    images: ['/assets/images/kodsnickerboa-hero.webp'],
+  },
 };
 
 export default function RootLayout({
