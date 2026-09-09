@@ -589,42 +589,6 @@ h1 {
   font-size: 0.72rem;
 }
 
-.hero-foot__location {
-  color: var(--sage);
-}
-
-.signal-strip {
-  overflow: hidden;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  color: var(--sage);
-  background: rgba(174, 188, 169, 0.03);
-}
-
-.signal-strip__track {
-  display: flex;
-  align-items: center;
-  width: max-content;
-  gap: 2.5rem;
-  padding-block: 1.15rem;
-  font-family: var(--mono);
-  font-size: 0.64rem;
-  letter-spacing: 0.15em;
-  animation: ticker 30s linear infinite;
-}
-
-.signal-strip__track i {
-  color: var(--coral);
-  font-size: 0.8rem;
-  font-style: normal;
-}
-
-@keyframes ticker {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 .intro {
   background: var(--paper);
   color: var(--ink);
