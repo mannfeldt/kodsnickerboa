@@ -22,7 +22,7 @@ The repository includes `.github/workflows/pages.yml`. After pushing the `main` 
 
 No publishing or external hosting setup is performed from this workspace.
 
-## Updating app store links
+## Updating links to app store
 
 Each app card currently contains empty `href=""` store links with a `coming soon` state. Replace the empty `href` value in `index.html` with the real App Store or Google Play URL when an app is published.
 
