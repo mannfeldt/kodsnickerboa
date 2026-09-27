@@ -16,6 +16,20 @@ Connect this repository to Cloudflare Pages and use these settings:
 The main page is `index.html`, and the Patchlands privacy policy is at
 `patchlands/privacy/`.
 
+The Patchlands download link is `/patchlands/download`. It redirects Android
+devices to Google Play and all other devices (including iOS, desktop, and
+unidentified devices) to the App Store. With JavaScript disabled, it defaults
+to the App Store. The store URLs are configured in
+`patchlands/download/index.html`.
+
+Patchlands invite links use `/patchlands/invite?tag=asdf%231234`. The page
+attempts to open `patchlands://invite` with the original query string and
+immediately offers an **Open Patchlands** link if the browser blocks the
+automatic attempt. There are no timed retries or automatic store redirects.
+Missing or blank tags show an invalid-invite message. JavaScript is required
+to construct the invite link; a message explains this when it is disabled.
+The page is served from `patchlands/invite/index.html`.
+
 ## Local preview
 
 Serve the repository root with any static server. For example:
