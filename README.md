@@ -1,8 +1,13 @@
-# Kodsnickerboa landing page
+# Kodsnickerboa
+
+The portfolio page at <https://kodsnickerboa.com>, plus the pages the apps link
+to (privacy policies, download and invite links) and the web version of
+Slotcars at `/slotcars/`.
 
 This is a dependency-free static site. The deployable files are served
 directly from the repository root; there is no framework, package manager, or
-build command.
+build command. The Slotcars web game is built in its own repository and its
+build output is committed here (see [Slotcars web game](#slotcars-web-game)).
 
 ## Cloudflare Pages
 
@@ -14,8 +19,10 @@ Connect this repository to Cloudflare Pages and use these settings:
 - Root directory: `/`
 
 The main page is `index.html`. The app privacy policies are at
-`patchlands/privacy/` and `patchwise/privacy/`. Patchwise reuses the Patchlands
-policy with its own app name and URL, and the same privacy contact.
+`patchlands/privacy/`, `patchwise/privacy/` and `slotcars/privacy/`. Patchwise
+reuses the Patchlands policy with its own app name and URL, and the same privacy
+contact. Slotcars has its own policy (the game is offline and sends nothing) and
+the contact hello.slotcars@kodsnickerboa.com.
 
 The Patchlands download link is `/patchlands/download`. It redirects Android
 devices to Google Play and all other devices (including iOS, desktop, and
@@ -42,6 +49,35 @@ App Store and Google Play destinations as Patchlands. At release, replace
 both script URLs, the noscript App Store redirect, and the fallback links in
 `patchwise/download/index.html` with Patchwise's own store URLs.
 
+## Slotcars web game
+
+`slotcars/` holds the Flutter web build of Slotcars, served at
+<https://kodsnickerboa.com/slotcars/>. To update it, run this from the
+repository root, with the Slotcars project checked out next to this one (or
+pass its path as an argument):
+
+```sh
+scripts/build-slotcars.sh
+```
+
+The script runs `flutter build web --release --base-href /slotcars/
+--no-web-resources-cdn` in the Slotcars project and copies `build/web/` into
+`slotcars/`. Commit the result; Cloudflare Pages serves it as is.
+
+- `--base-href /slotcars/` is required. Without it the game looks for its
+  files at the site root and shows a blank page.
+- `--no-web-resources-cdn` makes the game load its renderer (CanvasKit) from
+  this site instead of Google's CDN.
+- `slotcars/privacy/` is written by hand and is not part of the build. The
+  script leaves it alone.
+- Everything else in `slotcars/` is generated and is replaced on every run:
+  `index.html`, `flutter_bootstrap.js`, `flutter.js`, `main.dart.js`,
+  `flutter_service_worker.js`, `manifest.json`, `version.json`, `favicon.png`,
+  `icons/`, `assets/` and `canvaskit/`.
+- The script leaves out debug symbols and the `skwasm` and `wimp` renderers.
+  Those renderers are only loaded by a `--wasm` build; if you switch to one,
+  remove the two `--exclude '/canvaskit/...'` lines from the script.
+
 ## Local preview
 
 Serve the repository root with any static server. For example:
@@ -52,10 +88,21 @@ python3 -m http.server 8080
 
 Then open <http://localhost:8080>.
 
-## Updating app store links
+## Updating the projects
 
-Each app card currently contains empty store links with a `coming soon` state.
-Replace the empty `href` value in `index.html` with the real App Store or
-Google Play URL when an app is published.
+Each project is an `<article class="piece">` in `index.html`, with its status
+line, description, facts and links. The same projects are listed as icons on
+the shelf in the header (`<nav class="shelf">`).
 
-The artwork lives in `assets/images/`.
+- Patchlands links straight to its App Store and Google Play pages.
+- Slotcars links to the web game at `slotcars/`. When it is in the stores, add
+  store buttons like the ones on Patchlands and update its "Runs on" line.
+- Patchwise has no store links yet. Add them at release and change its status
+  line.
+- my friend from sits under "On the workbench" and is shown on the shelf as an
+  uncut block of wood (`.wood-block`). When it has an icon and screenshots,
+  move it up as a normal `piece`.
+
+The screenshots and icons in `assets/images/` are resized copies of each
+project's store artwork. `assets/images/og.png` is the link preview image, a
+1200 × 630 capture of the header.

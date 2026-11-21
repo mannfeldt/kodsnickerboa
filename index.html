@@ -1,374 +1,254 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#101414" />
-    <meta
-      name="description"
-      content="Kodsnickerboa is an independent app studio making thoughtful tools for everyday life, play, and the places in between."
-    />
-    <link rel="canonical" href="https://kodsnickerboa.com/" />
-    <meta property="og:title" content="Kodsnickerboa — Independent app studio" />
-    <meta property="og:url" content="https://kodsnickerboa.com/" />
-    <meta
-      property="og:description"
-      content="Small apps with a little soul. Explore the work in progress from Kodsnickerboa."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://kodsnickerboa.com/assets/images/kodsnickerboa-hero.webp" />
-    <title>Kodsnickerboa — Independent app studio</title>
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@400;500;600;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <body>
-    <a class="skip-link" href="#work">Skip to the work</a>
-    <div class="site-glow" aria-hidden="true"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#8b2a1f" />
+  <meta name="description"
+    content="Kodsnickerboa is the portfolio of a solo developer in Sweden: Slotcars, Patchlands, Patchwise and my friend from. Slotcars is playable in the browser." />
+  <link rel="canonical" href="https://kodsnickerboa.com/" />
+  <meta property="og:title" content="Kodsnickerboa — a portfolio of small games and apps" />
+  <meta property="og:url" content="https://kodsnickerboa.com/" />
+  <meta property="og:description"
+    content="Swedish for, roughly, the code carpentry shed. Three games and an app, made by one person." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://kodsnickerboa.com/assets/images/og.png" />
+  <title>Kodsnickerboa — a portfolio of small games and apps</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-    <header class="site-header">
-      <div class="shell nav-shell">
-        <a class="brand" href="#top" aria-label="Kodsnickerboa home">
-          <span class="brand-mark" aria-hidden="true">
-            <span class="brand-mark__tile brand-mark__tile--one"></span>
-            <span class="brand-mark__tile brand-mark__tile--two"></span>
-            <span class="brand-mark__tile brand-mark__tile--three"></span>
-          </span>
-          <span class="brand-name">Kodsnickerboa</span>
+<body>
+  <a class="skip-link" href="#projects">Skip to the projects</a>
+
+  <header class="wall" id="top">
+    <div class="shell">
+      <nav class="site-nav" aria-label="Primary">
+        <a class="site-nav__home" href="#top" aria-label="Kodsnickerboa, back to top">
+          <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true">
+            <path d="M3 15 16 4l13 11v13H3z" fill="currentColor" />
+            <path class="site-nav__door" d="M13 18h6v10h-6z" />
+          </svg>
         </a>
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          <span class="menu-toggle__label">Menu</span>
-          <span class="menu-toggle__lines" aria-hidden="true"><i></i><i></i></span>
-        </button>
+      <div class="hero">
+        <p class="hero__kicker">A portfolio of small games and apps</p>
+        <h1>Kodsnickerboa</h1>
 
-        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-          <a href="#work">The work <span aria-hidden="true">↗</span></a>
-          <a href="#philosophy">Philosophy <span aria-hidden="true">↗</span></a>
-          <a href="#contact" class="nav-cta">Keep in touch <span aria-hidden="true">↗</span></a>
-        </nav>
+        <div class="hero__row">
+          <p class="hero__lede">
+            Swedish for, roughly, <em>the code carpentry shed</em>. It is where I keep the things I make on my
+            own: three games and an app so far, all built in Flutter.
+          </p>
+
+          <nav class="shelf" aria-label="Projects on the shelf">
+            <ul class="shelf__items">
+              <li style="--i: 0">
+                <a class="shelf__item" href="#slotcars">
+                  <img src="assets/images/slotcars-icon.webp" alt="" width="256" height="256" />
+                  <span class="shelf__label">Slotcars</span>
+                </a>
+              </li>
+              <li style="--i: 1">
+                <a class="shelf__item" href="#patchlands">
+                  <img class="shelf__icon--padded" src="assets/images/patchlands-icon.webp" alt="" width="256"
+                    height="256" />
+                  <span class="shelf__label">Patchlands</span>
+                </a>
+              </li>
+              <li style="--i: 2">
+                <a class="shelf__item" href="#patchwise">
+                  <img src="assets/images/patchwise-icon.webp" alt="" width="256" height="256" />
+                  <span class="shelf__label">Patchwise</span>
+                </a>
+              </li>
+              <li style="--i: 3">
+                <a class="shelf__item" href="#my-friend-from">
+                  <span class="wood-block" aria-hidden="true"></span>
+                  <span class="shelf__label">my friend from</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main id="top">
-      <section class="hero section-shell" aria-labelledby="hero-title">
-        <div class="hero-grid shell">
-          <div class="hero-copy">
-            <p class="eyebrow eyebrow--accent"><span class="eyebrow-dot"></span> Independent app studio / 2026</p>
-            <h1 id="hero-title">
-              Small apps.<br />
-              <span class="hero-title__soft">Big feeling.</span>
-            </h1>
-            <p class="hero-lede">
-              Kodsnickerboa makes thoughtful software for everyday life, play, and the places in between.
+  <main>
+    <section class="bench" id="projects" aria-labelledby="projects-title">
+      <div class="shell">
+        <div class="section-head">
+          <h2 id="projects-title">On the shelf</h2>
+          <p>Finished, or close enough to show. Slotcars runs right here in the browser.</p>
+        </div>
+
+        <article class="piece" id="slotcars">
+          <div class="piece__media piece__media--slotcars">
+            <img class="shot shot--wide" src="assets/images/slotcars-race.webp"
+              alt="Four toy cars racing on a slot-car track laid over a city street map, with a coloured pad for each driver in the corners"
+              width="1600" height="900" />
+            <img class="shot shot--phone" src="assets/images/slotcars-trace.webp"
+              alt="A circuit traced along streets on a map of New York, 2.1 km long with 8 corners" width="560"
+              height="1217" loading="lazy" />
+          </div>
+          <div class="piece__body">
+            <p class="status">Playable in the browser</p>
+            <h3>Slotcars</h3>
+            <p class="piece__lead">
+              Trace a loop through the real streets of London, Stockholm or New York, then race toy slot cars
+              round it.
             </p>
-            <div class="hero-actions">
-              <a class="button button--light" href="#work">Explore the work <span aria-hidden="true">↓</span></a>
-              <a class="text-link" href="#philosophy">Why it exists <span aria-hidden="true">↘</span></a>
+            <p class="piece__text">
+              One thumb per driver, up to four on the same screen. Hold to go, lift to brake, and take a corner
+              too fast and the car pops out of its slot. On your own it is a time trial against your best lap.
+            </p>
+            <dl class="facts">
+              <dt>Kind</dt>
+              <dd>Racing game for 1–4 players on one screen</dd>
+              <dt>Built with</dt>
+              <dd>Flutter and OpenStreetMap data, packed small enough to ship three cities</dd>
+              <dt>Runs on</dt>
+              <dd>Web now. iPhone, iPad and Android are on their way to the stores.</dd>
+            </dl>
+            <div class="links">
+              <a class="button button--primary" href="slotcars/">Play Slotcars <span aria-hidden="true">→</span></a>
+              <a class="text-link" href="slotcars/privacy/">Privacy</a>
+            </div>
+            <p class="credit">Map data © OpenStreetMap contributors</p>
+          </div>
+        </article>
+
+        <article class="piece piece--flip" id="patchlands">
+          <div class="piece__media piece__media--patchlands">
+            <div class="shots">
+              <img src="assets/images/patchlands-home.webp"
+                alt="The Patchlands home screen with Solo Campaign, Multiplayer, Survival and High Scores" width="560"
+                height="1120" loading="lazy" />
+              <img src="assets/images/patchlands-board.webp"
+                alt="A two-player Patchlands game: a field filled with aubergine, cabbage and pumpkin patches"
+                width="560" height="1120" loading="lazy" />
+              <img src="assets/images/patchlands-trucks.webp" alt="Another Patchlands board in the middle of a game"
+                width="560" height="1120" loading="lazy" />
             </div>
           </div>
-
-          <div class="hero-art-wrap">
-            <div class="hero-art" data-parallax-target>
-              <img
-                src="assets/images/kodsnickerboa-hero.webp"
-                alt="Layered glass and matte cards arranged on a dark studio table"
-                width="1536"
-                height="1024"
-              />
-              <div class="hero-art__wash" aria-hidden="true"></div>
-              <div class="hero-art__frame" aria-hidden="true"></div>
-              <div class="hero-note hero-note--top" aria-hidden="true">
-                <span>01—05</span>
-                <span class="hero-note__line"></span>
-                <span>things in progress</span>
-              </div>
-              <div class="hero-note hero-note--bottom" aria-hidden="true">
-                <span class="hero-note__dot"></span>
-                <span>Made with care, shipped when ready.</span>
-              </div>
+          <div class="piece__body">
+            <p class="status">On the App Store and Google Play</p>
+            <h3>Patchlands</h3>
+            <p class="piece__lead">A puzzle game about filling a field, one oddly shaped vegetable patch at a time.</p>
+            <p class="piece__text">
+              Pick a patch, pay for it in coins and time, and find the spot where it fits. There is a solo
+              campaign, a survival mode and multiplayer against a friend, started with an invite link.
+            </p>
+            <dl class="facts">
+              <dt>Kind</dt>
+              <dd>Puzzle game, solo and multiplayer</dd>
+              <dt>Built with</dt>
+              <dd>Flutter, with a local database so it plays offline and Firebase for online games</dd>
+              <dt>Runs on</dt>
+              <dd>iPhone, iPad and Android</dd>
+            </dl>
+            <div class="links">
+              <a class="button button--primary" href="https://apps.apple.com/app/id6802707428" rel="noopener">App Store
+                <span aria-hidden="true">↗</span></a>
+              <a class="button button--ghost"
+                href="https://play.google.com/store/apps/details?id=kodsnickerboa.patchlands.patchlands"
+                rel="noopener">Google Play <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="patchlands/privacy/">Privacy</a>
             </div>
-            <div class="hero-orbit hero-orbit--one" aria-hidden="true"></div>
-            <div class="hero-orbit hero-orbit--two" aria-hidden="true"></div>
           </div>
+        </article>
+
+        <article class="piece" id="patchwise">
+          <div class="piece__media piece__media--patchwise">
+            <div class="shots">
+              <img src="assets/images/patchwise-home.webp" alt="The Patchwise home screen in cream and brown"
+                width="560" height="996" loading="lazy" />
+              <img src="assets/images/patchwise-place.webp"
+                alt="Placing a patch on a Patchwise board made of plain wooden tiles" width="560" height="996"
+                loading="lazy" />
+              <img src="assets/images/patchwise-dark.webp" alt="The same Patchwise board in dark mode" width="560"
+                height="996" loading="lazy" />
+            </div>
+          </div>
+          <div class="piece__body">
+            <p class="status status--soon">Not released yet</p>
+            <h3>Patchwise</h3>
+            <p class="piece__lead">The same puzzle as Patchlands with the farm taken out.</p>
+            <p class="piece__text">
+              Plain wooden tiles, a quiet palette and a dark mode, for anyone who wants the puzzle and nothing
+              around it. It shares its game engine with Patchlands and is a study in how far the same rules
+              can be restyled.
+            </p>
+            <dl class="facts">
+              <dt>Kind</dt>
+              <dd>Puzzle game, solo and multiplayer</dd>
+              <dt>Built with</dt>
+              <dd>Flutter, on the Patchlands engine</dd>
+              <dt>Runs on</dt>
+              <dd>iPhone, iPad and Android, once it is out</dd>
+            </dl>
+            <div class="links">
+              <a class="text-link" href="patchwise/privacy/">Privacy</a>
+            </div>
+          </div>
+        </article>
+
+        <div class="section-head section-head--second">
+          <h2 id="bench-title">On the workbench</h2>
+          <p>Marked out, not yet cut.</p>
         </div>
 
-        <div class="hero-foot shell" aria-label="Studio details">
-          <span class="mono-label">01 / studio note</span>
-          <span class="hero-foot__rule" aria-hidden="true"></span>
-          <span class="hero-foot__copy">Useful first. Quietly distinctive always.</span>
-        </div>
-      </section>
-
-      <section class="intro section-shell" id="philosophy" aria-labelledby="intro-title">
-        <div class="shell">
-          <div class="intro-topline">
-            <p class="eyebrow">A small studio with a wide orbit</p>
-            <span class="mono-label">02 / philosophy</span>
-          </div>
-          <div class="intro-heading-row">
-            <h2 id="intro-title">Good software should<br /><em>make room for life.</em></h2>
-            <p class="intro-aside">
-              The best ideas are often the ones that stay close to people: a smoother fika shift, a friend worth remembering, a puzzle that earns one more try, a better place to land.
+        <article class="piece-bench" id="my-friend-from" aria-labelledby="mff-title">
+          <span class="wood-block wood-block--large" aria-hidden="true"></span>
+          <div>
+            <p class="status status--bench">Early build</p>
+            <h3 id="mff-title">my friend from</h3>
+            <p class="piece__lead">
+              A private address book for the friends you make while travelling: who they are, where you met
+              and where they live now.
+            </p>
+            <p class="piece__text">
+              It keeps everything on your phone and works without a signal. Nothing is shared unless you show
+              someone your QR code. Built with Flutter.
             </p>
           </div>
-
-          <div class="principle-grid">
-            <article class="principle reveal">
-              <span class="principle__number">01</span>
-              <h3>Quiet by default</h3>
-              <p>Less noise, fewer dark patterns, and interfaces that know when to get out of the way.</p>
-            </article>
-            <article class="principle reveal">
-              <span class="principle__number">02</span>
-              <h3>Personal, not performative</h3>
-              <p>Tools that respect ownership, privacy, and the small contexts that make a product useful.</p>
-            </article>
-            <article class="principle reveal">
-              <span class="principle__number">03</span>
-              <h3>A little bit of wonder</h3>
-              <p>Practical can still feel special. Every interaction gets a chance to be clear, tactile, and human.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="work section-shell" id="work" aria-labelledby="work-title">
-        <div class="shell">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow eyebrow--accent"><span class="eyebrow-dot"></span> The portfolio</p>
-              <h2 id="work-title">Things taking shape.</h2>
-            </div>
-            <p class="section-heading__aside">Five independent ideas, each with its own pace, texture, and reason to exist.</p>
-          </div>
-
-          <div class="filter-row" role="group" aria-label="Filter apps by category">
-            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Everything</button>
-            <button class="filter-button" type="button" data-filter="utility" aria-pressed="false">Utility</button>
-            <button class="filter-button" type="button" data-filter="play" aria-pressed="false">Play</button>
-            <button class="filter-button" type="button" data-filter="personal" aria-pressed="false">Personal</button>
-            <button class="filter-button" type="button" data-filter="living" aria-pressed="false">Places</button>
-          </div>
-
-          <div class="app-grid">
-            <article class="app-card app-card--featured reveal" data-category="utility">
-              <div class="app-card__media">
-                <img
-                  src="assets/images/fikakassan-placeholder.webp"
-                  alt="Coffee, cinnamon bun, and paper slips on a warmly lit café table"
-                  width="1254"
-                  height="1254"
-                  loading="lazy"
-                />
-                <span class="card-index">01</span>
-                <span class="status-pill">in development</span>
-              </div>
-              <div class="app-card__body">
-                <div class="app-card__title-row">
-                  <div>
-                    <p class="app-kicker">For the good shift</p>
-                    <h3>Fikakassan</h3>
-                  </div>
-                  <span class="app-arrow" aria-hidden="true">↗</span>
-                </div>
-                <p class="app-card__description">A calm, local-first checkout for pop-up cafés, school fundraisers, and small events — with reusable product lists, sales history, and Swish QR at the counter.</p>
-                <div class="app-card__footer">
-                  <div class="tag-list"><span>Utility</span><span>Offline-first</span><span>Swish-ready</span></div>
-                  <div class="store-links" aria-label="Fikakassan store links">
-                    <a class="store-link" href="" data-store-pending aria-disabled="true" aria-label="Fikakassan on the App Store — coming soon"><span class="store-mark" aria-hidden="true">A</span><span>App Store</span></a>
-                    <a class="store-link" href="" data-store-pending aria-disabled="true" aria-label="Fikakassan on Google Play — coming soon"><span class="store-mark store-mark--play" aria-hidden="true">▶</span><span>Google Play</span></a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="app-card app-card--tall app-card--blue reveal" data-category="personal">
-              <div class="app-card__media">
-                <img
-                  src="assets/images/myfriendfrom-placeholder.webp"
-                  alt="A paper globe with thread routes resting on a dark notebook"
-                  width="1254"
-                  height="1254"
-                  loading="lazy"
-                />
-                <span class="card-index">02</span>
-                <span class="status-pill">in development</span>
-              </div>
-              <div class="app-card__body">
-                <div class="app-card__title-row">
-                  <div>
-                    <p class="app-kicker">Keep the connection</p>
-                    <h3>my friend from</h3>
-                  </div>
-                  <span class="app-arrow" aria-hidden="true">↗</span>
-                </div>
-                <p class="app-card__description">A private, offline-first address book for people met across the world. Save the story, the place, and the route back to each other.</p>
-                <div class="app-card__footer">
-                  <div class="tag-list"><span>Personal</span><span>Private by default</span><span>Travel</span></div>
-                  <div class="store-links" aria-label="my friend from store links">
-                    <a class="store-link" href="" data-store-pending aria-disabled="true" aria-label="my friend from on the App Store — coming soon"><span class="store-mark" aria-hidden="true">A</span><span>App Store</span></a>
-                    <a class="store-link" href="" data-store-pending aria-disabled="true" aria-label="my friend from on Google Play — coming soon"><span class="store-mark store-mark--play" aria-hidden="true">▶</span><span>Google Play</span></a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="app-card app-card--tall app-card--game reveal" data-category="play">
-              <div class="app-card__media">
-                <img
-                  src="assets/images/patchlands-placeholder.webp"
-                  alt="Colorful geometric puzzle pieces arranged on an indigo game board"
-                  width="1254"
-                  height="1254"
-                  loading="lazy"
-                />
-                <span class="card-index">03</span>
-                <span class="status-pill">in development</span>
-              </div>
-              <div class="app-card__body">
-                <div class="app-card__title-row">
-                  <div>
-                    <p class="app-kicker">Puzzle, with a sense of place</p>
-                    <h3>Patchlands</h3>
-                  </div>
-                  <span class="app-arrow" aria-hidden="true">↗</span>
-                </div>
-                <p class="app-card__description">An offline-first puzzle game built around tactile shapes, thoughtful campaigns, and a little spark of discovery.</p>
-                <div class="app-card__footer">
-                  <div class="tag-list"><span>Game</span><span>Solo + multiplayer</span><span>Offline-first</span></div>
-                  <div class="store-links" aria-label="Patchlands store links">
-                    <a class="store-link" href="" data-store-pending aria-disabled="true" aria-label="Patchlands on the App Store — coming soon"><span class="store-mark" aria-hidden="true">A</span><span>App Store</span></a>
-                    <a class="store-link" href="" data-store-pending aria-disabled="true" aria-label="Patchlands on Google Play — coming soon"><span class="store-mark store-mark--play" aria-hidden="true">▶</span><span>Google Play</span></a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="app-card app-card--wide app-card--paper reveal" data-category="play">
-              <div class="app-card__media">
-                <img
-                  src="assets/images/patchwise-placeholder.webp"
-                  alt="A compact set of rounded colored puzzle tiles on a cream paper background"
-                  width="1254"
-                  height="1254"
-                  loading="lazy"
-                />
-                <span class="card-index">04</span>
-                <span class="status-pill">in development</span>
-              </div>
-              <div class="app-card__body">
-                <div class="app-card__title-row">
-                  <div>
-                    <p class="app-kicker">A fresh take on the puzzle</p>
-                    <h3>Patchwise</h3>
-                  </div>
-                  <span class="app-arrow" aria-hidden="true">↗</span>
-                </div>
-                <p class="app-card__description">The same satisfying puzzle play as Patchlands, with a fresh palette and a different feel. Tactile shapes, thoughtful campaigns, and offline-first play.</p>
-                <div class="app-card__footer">
-                  <div class="tag-list"><span>Game</span><span>Solo + multiplayer</span><span>Offline-first</span></div>
-                  <div class="store-links" aria-label="Patchwise store links">
-                    <a class="store-link" href="" data-store-pending aria-disabled="true" aria-label="Patchwise on the App Store — coming soon"><span class="store-mark" aria-hidden="true">A</span><span>App Store</span></a>
-                    <a class="store-link" href="" data-store-pending aria-disabled="true" aria-label="Patchwise on Google Play — coming soon"><span class="store-mark store-mark--play" aria-hidden="true">▶</span><span>Google Play</span></a>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <article class="app-card app-card--full app-card--living reveal" data-category="living">
-              <div class="app-card__media">
-                <img
-                  src="assets/images/tinggal2-placeholder.webp"
-                  alt="A sunlit tropical doorway framed by deep violet architectural shapes"
-                  width="1254"
-                  height="1254"
-                  loading="lazy"
-                />
-                <span class="card-index">05</span>
-                <span class="status-pill">early concept</span>
-              </div>
-              <div class="app-card__body">
-                <div class="app-card__title-row">
-                  <div>
-                    <p class="app-kicker">Find a better fit</p>
-                    <h3>Tinggal</h3>
-                  </div>
-                  <span class="app-arrow" aria-hidden="true">↗</span>
-                </div>
-                <p class="app-card__description">A premium, trust-first way to match long-term home seekers with quality Bali listings — built around clarity, relevance, and less endless scrolling.</p>
-                <div class="app-card__footer">
-                  <div class="tag-list"><span>Places</span><span>Bali first</span><span>Long-term living</span></div>
-                  <div class="store-links" aria-label="Tinggal store links">
-                    <a class="store-link" href="" data-store-pending aria-disabled="true" aria-label="Tinggal on the App Store — coming soon"><span class="store-mark" aria-hidden="true">A</span><span>App Store</span></a>
-                    <a class="store-link" href="" data-store-pending aria-disabled="true" aria-label="Tinggal on Google Play — coming soon"><span class="store-mark store-mark--play" aria-hidden="true">▶</span><span>Google Play</span></a>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <p class="work-footnote"><span class="footnote-star" aria-hidden="true">✳</span> Store links are ready for when the apps are ready. No pretending, no premature launch dates.</p>
-        </div>
-      </section>
-
-      <section class="studio-note section-shell" aria-labelledby="studio-note-title">
-        <div class="shell studio-note__grid">
-          <div class="studio-note__mark" aria-hidden="true">
-            <span>KS</span>
-            <span class="studio-note__ring studio-note__ring--one"></span>
-            <span class="studio-note__ring studio-note__ring--two"></span>
-          </div>
-          <div class="studio-note__copy">
-            <p class="eyebrow">The studio note</p>
-            <h2 id="studio-note-title">Built small.<br /><em>Thought through.</em></h2>
-            <p>One person, a handful of good ideas, and an unreasonable amount of care for the details that make an app feel like it belongs in your life.</p>
-            <a class="text-link text-link--light" href="#contact">Say hello when the time is right <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact section-shell" id="contact" aria-labelledby="contact-title">
-        <div class="shell">
-          <div class="contact-card">
-            <span class="contact-card__orb contact-card__orb--one" aria-hidden="true"></span>
-            <span class="contact-card__orb contact-card__orb--two" aria-hidden="true"></span>
-            <div class="contact-card__copy">
-              <p class="eyebrow eyebrow--dark">05 / next chapter</p>
-              <h2 id="contact-title">More good things<br /><em>are taking shape.</em></h2>
-            </div>
-            <a class="button button--dark button--contact" href="mailto:hello@kodsnickerboa.com">hello@kodsnickerboa.com <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="shell footer-main">
-        <a class="brand brand--footer" href="#top" aria-label="Back to top">
-          <span class="brand-mark" aria-hidden="true">
-            <span class="brand-mark__tile brand-mark__tile--one"></span>
-            <span class="brand-mark__tile brand-mark__tile--two"></span>
-            <span class="brand-mark__tile brand-mark__tile--three"></span>
-          </span>
-          <span class="brand-name">Kodsnickerboa</span>
-        </a>
-        <p class="footer-caption">Independent apps for a more considered everyday.</p>
-        <a class="footer-contact" href="mailto:hello@kodsnickerboa.com">hello@kodsnickerboa.com</a>
-        <span class="mono-label">Made in Sweden / with care</span>
+        </article>
       </div>
-      <div class="shell footer-bottom">
-        <span>© <span id="current-year">2026</span> Kodsnickerboa</span>
-        <span><a href="patchlands/privacy/">Patchlands privacy</a> · <a href="patchwise/privacy/">Patchwise privacy</a> · Still becoming.</span>
-      </div>
-    </footer>
+    </section>
+  </main>
 
-    <script src="script.js" defer></script>
-  </body>
+  <footer class="wall wall--foot" id="contact">
+    <div class="shell">
+      <div class="contact">
+        <h2>Say hello</h2>
+        <p>Found a bug, have an idea for a circuit, or just want to say something about one of the games?</p>
+        <a class="button button--trim" href="mailto:hello@kodsnickerboa.com">hello@kodsnickerboa.com</a>
+      </div>
+      <div class="foot">
+        <span>© <span id="current-year">2026</span> Kodsnickerboa · Made in Sweden</span>
+        <span class="foot__links">
+          Privacy:
+          <a href="slotcars/privacy/">Slotcars</a>
+          <a href="patchlands/privacy/">Patchlands</a>
+          <a href="patchwise/privacy/">Patchwise</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+
 </html>
