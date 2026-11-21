@@ -44,11 +44,6 @@ and `/patchwise/invite?tag=asdf%231234`. Its invite page opens
 Patchwise** fallback link. Its files are in `patchwise/download/index.html`
 and `patchwise/invite/index.html`.
 
-Until Patchwise is released, its download page intentionally uses the same
-App Store and Google Play destinations as Patchlands. At release, replace
-both script URLs, the noscript App Store redirect, and the fallback links in
-`patchwise/download/index.html` with Patchwise's own store URLs.
-
 ## Slotcars web game
 
 `slotcars/` holds the Flutter web build of Slotcars, served at
@@ -94,11 +89,9 @@ Each project is an `<article class="piece">` in `index.html`, with its status
 line, description, facts and links. The same projects are listed as icons on
 the shelf in the header (`<nav class="shelf">`).
 
-- Patchlands links straight to its App Store and Google Play pages.
+- Patchlands and Patchwise link straight to their App Store and Google Play pages.
 - Slotcars links to the web game at `slotcars/`. When it is in the stores, add
   store buttons like the ones on Patchlands and update its "Runs on" line.
-- Patchwise has no store links yet. Add them at release and change its status
-  line.
 - my friend from sits under "On the workbench" and is shown on the shelf as an
   uncut block of wood (`.wood-block`). When it has an icon and screenshots,
   move it up as a normal `piece`.
