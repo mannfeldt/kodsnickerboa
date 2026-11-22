@@ -487,10 +487,11 @@
       <p class="hero-lede">
         Slotcars lets you trace a loop through real city streets and race toy slot cars
         around it, with up to four drivers on one screen. Everything you make stays on
-        your device; the game sends nothing anywhere.
+        your device. The game sends Google anonymous counts of what gets played, and
+        reports of crashes, so we can see what to improve.
       </p>
       <div class="hero-meta">
-        <span><span class="meta-label">Effective</span> November 21, 2026</span>
+        <span><span class="meta-label">Effective</span> November 22, 2026</span>
         <span><span class="meta-label">Operator</span> Kodsnickerboa · Sweden</span>
       </div>
     </header>
@@ -499,15 +500,19 @@
       <div>
         <strong>Short version</strong>
         <p>
-          Slotcars has no accounts, ads, analytics, crash reporting, online play, cloud
-          saves or payments, and it works without an internet connection. Your circuits,
-          lap records and race settings are saved on your device and nowhere else.
+          Slotcars has no accounts, ads, online play, cloud saves or payments, and it
+          works without an internet connection. Your circuits, lap records and race
+          settings are saved on your device and nowhere else. The app uses Google's
+          Firebase services to count how the game is used, measure its speed, report
+          crashes and, if you allow it, send notifications. None of that includes your
+          name, your circuits or an advertising ID.
         </p>
       </div>
       <p class="summary-side">
-        This policy describes the current release of Slotcars for Android and iOS.
-        It will be updated if the app adds accounts, online play, payments, advertising,
-        or another data-collecting service.
+        This policy describes Slotcars for Android and iOS and the version played in a
+        web browser at kodsnickerboa.com/slotcars. Earlier versions of the app (1.0.x)
+        sent nothing at all. It will be updated if the app adds accounts, online play,
+        payments, advertising, or another data-collecting service.
       </p>
     </aside>
 
@@ -531,13 +536,15 @@
           <h2>1. Scope</h2>
           <p>
             This privacy policy explains how Kodsnickerboa handles information in
-            Slotcars for Android and iOS. Slotcars is a racing game for one to four
+            Slotcars for Android and iOS, and in the version played in a web browser at
+            kodsnickerboa.com/slotcars. Slotcars is a racing game for one to four
             drivers sharing one phone or tablet: you trace a circuit on a city map built
             into the app, then race on it, alone against the clock or against each other.
           </p>
           <p>
             The policy applies to the app and not to the independent privacy practices of
-            Apple, Google, or the device and operating-system providers you use.
+            Apple, Google, or the device and operating-system providers you use. Google
+            is named below where the app itself sends information to it.
           </p>
         </section>
 
@@ -545,9 +552,9 @@
           <h2>2. Data we process</h2>
           <p>
             Slotcars never asks for an account, a name, an email address, your contacts,
-            your location, the camera, the microphone, your photos or any other device
-            permission. It has no code that connects to the internet. The information it
-            handles is limited to what you create while playing:
+            your location, the camera, the microphone or your photos. The only permission
+            it can ask for is to send notifications, and only when you tap "Tell me about
+            new cities". The information it handles falls into two groups:
           </p>
 
           <div class="data-card-grid">
@@ -561,19 +568,74 @@
               </p>
             </div>
             <div class="data-card">
-              <h3>Nothing sent anywhere · Android and iOS</h3>
+              <h3>Sent to Google Firebase</h3>
               <p>
-                Slotcars sends no information off your device. It contains no analytics,
-                crash-reporting, advertising or cloud service, and no server of ours
-                receives anything from it. The one link out of the app opens this page in
-                your web browser.
+                Counts of what is played, how fast the app runs, crash reports, and a
+                notification address if you allow notifications. Each comes with a
+                random ID for this installation of the app and general device
+                information. The details are below.
               </p>
             </div>
           </div>
 
+          <h3>Usage counts (Google Analytics for Firebase)</h3>
+          <p>
+            The app records that a race was started, finished or left, that a circuit was
+            saved, that a best lap was beaten, and whether notifications were allowed.
+            With a race it sends the city, the number of drivers and laps, the race
+            format, whether items, a following camera or a night race were chosen, how
+            long the race took and how often cars came off the track. With a saved
+            circuit it sends the city and whether you traced it or used "Surprise me".
+            Circuit names, routes and lap times are not sent. Google Analytics adds
+            general information by itself: first opens, sessions and time in the app,
+            device model, operating-system and app version, language, and the country or
+            region worked out from your IP address. The app is built without the
+            advertising ID (IDFA on iOS, AAID on Android) and does not collect it.
+          </p>
+
+          <h3>Speed measurements (Firebase Performance Monitoring)</h3>
+          <p>
+            How long the app takes to start, to load a city's map and to prepare a race,
+            together with device model, operating-system and app version, country and
+            network type.
+          </p>
+
+          <h3>Crash reports (Firebase Crashlytics) · Android and iOS</h3>
+          <p>
+            When the app crashes or hits an error it did not expect, it sends a report:
+            where in the code it happened, the device model, operating-system and app
+            version, free memory and disk space, the time, and a random ID for this
+            installation. With it come the usage counts recorded just before the error.
+          </p>
+
+          <h3>Remote settings (Firebase Remote Config)</h3>
+          <p>
+            At startup the app asks Firebase for a few settings we can change without an
+            update, such as which cities are offered. The request carries the random
+            installation ID, the app version, language and country.
+          </p>
+
+          <h3>Notifications and messages (Firebase Cloud Messaging and In-App Messaging) · Android and iOS</h3>
+          <p>
+            Only if you tap "Tell me about new cities" and allow notifications does the
+            app register a notification address (a push token) with Firebase and, on
+            iOS, Apple. We use it to send occasional news about the game to everyone who
+            allowed it, not to you individually. The app can also show a message inside
+            the game, chosen by Firebase from the usage counts and the installation ID.
+          </p>
+
+          <h3>In a web browser</h3>
+          <p>
+            The web version asks before it counts anything: Google Analytics, which
+            stores cookies in your browser, stays off unless you answer yes to the
+            question on the home screen. Remote settings and speed measurements run
+            without asking and keep a random installation ID in the browser's storage.
+            The web version has no crash reports, notifications or in-app messages.
+          </p>
+
           <div class="callout">
             <p>
-              The maps of London, Stockholm and New York are built from OpenStreetMap
+              The maps of London, Stockholm, Paris, Rome, Sydney and New York are built from OpenStreetMap
               data, © OpenStreetMap contributors, available under the
               <a href="https://opendatacommons.org/licenses/odbl/" rel="noreferrer">Open Database License</a>.
               They are bundled with the app, so viewing or racing on a map does not contact
@@ -588,8 +650,19 @@
           <ul>
             <li>to run Slotcars and keep your circuits, lap records and race settings available on your device;</li>
             <li>to show your best laps and sector times, and to let your best lap drive beside you as a ghost, when you
-              race a circuit again.</li>
+              race a circuit again;</li>
+            <li>to learn which cities, race formats and features are used and where players give up, so we know what
+              to improve;</li>
+            <li>to find and fix crashes and slow spots;</li>
+            <li>to switch features or cities on and off without an app update;</li>
+            <li>to tell you about new cities and other news, if you allowed notifications.</li>
           </ul>
+          <p>
+            Where the GDPR applies, we rely on our legitimate interest in keeping the game
+            working and knowing how it is used for usage counts, speed measurements, crash
+            reports and remote settings in the Android and iOS apps, and on your consent
+            for notifications and for Google Analytics in the web version.
+          </p>
           <p>
             Slotcars does not contain an advertising SDK, does not track you across
             apps or websites, and does not sell personal information.
@@ -599,8 +672,17 @@
         <section class="policy-section" id="sharing">
           <h2>4. Who receives information</h2>
           <p>
-            We do not share any information with anyone: the app does not send data off
-            your device.
+            The information described in section 2 as sent to Google Firebase is processed
+            for us by Google (Google Ireland Limited in the EEA, Google LLC elsewhere),
+            under Google's data-processing terms. Google may process it in the United
+            States and other countries; transfers from the EEA rely on the EU–U.S. Data
+            Privacy Framework and the European Commission's standard contractual clauses.
+            Google's own description is in the
+            <a href="https://firebase.google.com/support/privacy" rel="noreferrer">Firebase privacy information</a>.
+          </p>
+          <p>
+            We do not sell information, do not share it with advertisers, and do not
+            give it to anyone else. Nothing you create in the game is shared with anyone.
           </p>
           <p>
             Apple and Google may separately process information as part of their
@@ -617,6 +699,21 @@
             screen, or press and hold the card. Uninstalling the app or clearing its data
             in your device settings removes everything. Device backups made by iOS or
             Android may contain a copy, under your backup settings.
+          </p>
+          <h3>Information sent to Google Firebase</h3>
+          <p>
+            Usage counts are kept for up to 14 months, crash reports and speed
+            measurements for 90 days, after which Google deletes them. The Android and
+            iOS apps have no switch for usage counts, speed measurements or crash
+            reports. Uninstalling the app stops all of it, and a new installation gets a
+            new random ID that is not linked to the old one. You can turn notifications
+            off at any time in your device's settings. In the web version, clearing this
+            site's data in your browser removes the cookies and the installation ID, and
+            the question about usage counts is asked again.
+          </p>
+          <p>
+            To object to this processing, or to ask for the information tied to your
+            installation to be deleted, write to the address in section 8.
           </p>
         </section>
 
@@ -641,7 +738,8 @@
           <h2>7. Children</h2>
           <p>
             Slotcars does not knowingly request names, email addresses, or other
-            directly identifying information from children. If you are a parent or
+            directly identifying information from children, shows no advertising, and
+            does not collect an advertising ID. If you are a parent or
             guardian and believe that a child has provided us with personal information,
             please contact us so we can review the request and take appropriate action.
           </p>
