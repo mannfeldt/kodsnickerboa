@@ -2,12 +2,12 @@
 
 The portfolio page at <https://kodsnickerboa.com>, plus the pages the apps link
 to (privacy policies, download and invite links) and the web version of
-Slotcars at `/slotcars/`.
+Slotcars at `/slotcars/` and Widas Mattekasse at `/widasmattekasse/`.
 
 This is a dependency-free static site. The deployable files are served
 directly from the repository root; there is no framework, package manager, or
-build command. The Slotcars web game is built in its own repository and its
-build output is committed here (see [Slotcars web game](#slotcars-web-game)).
+build command. The Flutter apps are built in their own repositories and their build output
+is committed here.
 
 ## Cloudflare Pages
 
@@ -72,6 +72,27 @@ The script runs `flutter build web --release --base-href /slotcars/
 - The script leaves out debug symbols and the `skwasm` and `wimp` renderers.
   Those renderers are only loaded by a `--wasm` build; if you switch to one,
   remove the two `--exclude '/canvaskit/...'` lines from the script.
+
+## Widas Mattekasse
+
+The Swedish landing page is at <https://kodsnickerboa.com/widasmattekasse/>.
+It was copied from `../mattekassen/landing-page` and is maintained here.
+The Flutter app is at <https://kodsnickerboa.com/widasmattekasse/app/>, with
+the admin area at `/widasmattekasse/app/admin`.
+
+To update the app, run this from the repository root. The default source is
+`../mattekassen4`; pass its path as an argument for a different checkout.
+
+```sh
+scripts/build-widasmattekasse.sh
+```
+
+The script builds with `--base-href /widasmattekasse/app/`, bundles CanvasKit
+locally and replaces the generated files under `widasmattekasse/app/`.
+Commit the output for Cloudflare Pages. The root `_redirects` file rewrites
+direct requests for Flutter routes to the app shell. Update those rules
+when the Flutter routes change. The app uses the existing Widas Mattekasse
+Firebase project for Auth and Firestore.
 
 ## Local preview
 

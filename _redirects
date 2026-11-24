@@ -1,0 +1,9 @@
+# Serve the Flutter app shell for client-side routes and direct links.
+# Keep these in sync with mattekassen4/lib/app/router.dart.
+/widasmattekasse/app/leklada /widasmattekasse/app/ 200
+/widasmattekasse/app/profil /widasmattekasse/app/ 200
+/widasmattekasse/app/admin /widasmattekasse/app/ 200
+/widasmattekasse/app/barn/:id /widasmattekasse/app/ 200
+/widasmattekasse/app/lek/:id /widasmattekasse/app/ 200
+/widasmattekasse/app/admin/:section /widasmattekasse/app/ 200
+/widasmattekasse/app/admin/lek/:id /widasmattekasse/app/ 200
