@@ -1,0 +1,999 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tinggal</title>
+<link rel="canonical" href="https://kodsnickerboa.com/tinggal/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kodsnickerboa.com/tinggal/">
+<meta property="og:title" content="Tinggal — Find a home that fits">
+<meta property="og:description" content="Describe the home you want once. Tinggal matches you with homes that fit, starting in Bali.">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Tinggal matches people looking for a home with landlords, sellers and agents. Describe the home you want once and get notified when one fits. Starting in Bali.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Young+Serif&display=swap">
+<style>
+/* Layout: a deep jungle hero holds a live match demo inside a phone, in front of a marigold sun.
+   Below it, quiet mist-toned sections. Green always means the people looking, marigold the people listing,
+   and the two lanes run side by side until they meet. */
+:root {
+  --ground: #F2F6F1;
+  --surface: #FFFFFF;
+  --ink: #11231C;
+  --muted: #53665C;
+  --line: #D3DDD5;
+  --jungle: #0F3B2E;
+  --jungle-raised: #17493A;
+  --on-jungle: #ECF4EE;
+  --on-jungle-muted: #B4CBBF;
+  --leaf: #0C7558;
+  --leaf-soft: #DCEFE6;
+  --on-leaf: #FFFFFF;
+  --marigold: #F4A51F;
+  --marigold-soft: #FDEFD0;
+  --on-marigold: #2B1B00;
+  --shadow: 0 1px 2px rgba(17, 35, 28, .06), 0 14px 34px -14px rgba(17, 35, 28, .2);
+
+  --display: "Young Serif", "Iowan Old Style", Georgia, serif;
+  --body: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "DM Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --wrap: 72rem;
+
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0B1411; --surface: #131F1A; --ink: #E7F0E9; --muted: #9BB0A4; --line: #263830;
+    --jungle: #10291F; --jungle-raised: #1A3D30; --on-jungle: #ECF4EE; --on-jungle-muted: #B4CBBF;
+    --leaf: #55CDA4; --leaf-soft: #17352A; --on-leaf: #06241A;
+    --marigold: #F4A51F; --marigold-soft: #3A2A0A; --on-marigold: #2B1B00;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 14px 34px -14px rgba(0, 0, 0, .7);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0B1411; --surface: #131F1A; --ink: #E7F0E9; --muted: #9BB0A4; --line: #263830;
+  --jungle: #10291F; --jungle-raised: #1A3D30; --on-jungle: #ECF4EE; --on-jungle-muted: #B4CBBF;
+  --leaf: #55CDA4; --leaf-soft: #17352A; --on-leaf: #06241A;
+  --marigold: #F4A51F; --marigold-soft: #3A2A0A; --on-marigold: #2B1B00;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 14px 34px -14px rgba(0, 0, 0, .7);
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font: 400 1.0625rem/1.6 var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { max-width: 100%; }
+[hidden] { display: none !important; }
+:focus-visible { outline: 2.5px solid var(--marigold); outline-offset: 3px; }
+section, header { scroll-margin-top: 1rem; }
+
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  letter-spacing: -.01em;
+  text-wrap: balance;
+  margin: 0;
+}
+h1 { font-size: clamp(2.5rem, 5.6vw, 4.4rem); line-height: 1.04; }
+h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); line-height: 1.08; }
+h3 { font-size: 1.375rem; line-height: 1.2; }
+h4 { font: 700 1.0625rem/1.3 var(--body); margin: 0; }
+p { margin: 0; }
+
+.wrap {
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+.band { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+.band-surface { background: var(--surface); }
+
+.eyebrow {
+  font: 500 .8125rem/1 var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+}
+.eyebrow::before {
+  content: "";
+  width: .6rem; height: .6rem;
+  border-radius: 50%;
+  background: var(--leaf);
+}
+.eyebrow-list::before { background: var(--marigold); }
+.eyebrow-plain::before { background: var(--muted); }
+
+.head { display: grid; gap: 1rem; margin-bottom: clamp(2rem, 4vw, 3.25rem); }
+.sub { font-size: 1.1875rem; line-height: 1.55; color: var(--muted); max-width: 38rem; }
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+.split-top { align-items: start; }
+.prose { display: grid; gap: 1.1rem; max-width: 34rem; align-content: start; }
+.prose p { color: var(--muted); }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  font: 600 1rem/1 var(--body);
+  padding: .95rem 1.4rem;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .15s ease;
+}
+.btn-primary { background: var(--marigold); color: var(--on-marigold); }
+.btn-primary:hover { transform: translateY(-1px); }
+.btn-outline {
+  border-color: color-mix(in srgb, var(--on-jungle) 35%, transparent);
+  color: var(--on-jungle);
+  padding: .7rem 1.1rem;
+  font-size: .9375rem;
+}
+.btn-outline:hover { border-color: var(--on-jungle); }
+.btn-text {
+  color: var(--on-jungle);
+  padding-inline: .25rem;
+  text-decoration: underline;
+  text-underline-offset: .3em;
+  text-decoration-color: color-mix(in srgb, var(--on-jungle) 40%, transparent);
+}
+
+/* Kawung ground: the overlapping-circle batik motif, drawn with gradients */
+.kawung { position: relative; isolation: isolate; overflow: hidden; background: var(--jungle); color: var(--on-jungle); }
+.kawung::before {
+  --k: color-mix(in srgb, var(--on-jungle) 10%, transparent);
+  --ring: transparent 30px, var(--k) 30.6px, var(--k) 31.5px, transparent 32.1px;
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background-image:
+    radial-gradient(circle at 22px 22px, var(--ring)),
+    radial-gradient(circle at -22px 22px, var(--ring)),
+    radial-gradient(circle at 66px 22px, var(--ring)),
+    radial-gradient(circle at 22px -22px, var(--ring)),
+    radial-gradient(circle at 22px 66px, var(--ring));
+  background-size: 44px 44px;
+  -webkit-mask-image: linear-gradient(100deg, transparent 25%, #000 100%);
+  mask-image: linear-gradient(100deg, transparent 25%, #000 100%);
+}
+
+/* Hero */
+.hero {
+  margin-top: calc(-1 * env(safe-area-inset-top, 0px));
+  padding-top: env(safe-area-inset-top, 0px);
+}
+.nav { display: flex; align-items: center; gap: 1.5rem; padding-block: 1.25rem; }
+.brand {
+  display: inline-flex; align-items: center; gap: .6rem;
+  font: 400 1.6rem/1 var(--display);
+  letter-spacing: -.01em;
+  color: inherit; text-decoration: none;
+}
+.mark { width: 1.9rem; height: 1.9rem; flex: none; }
+.mark-bg { fill: var(--marigold); }
+.mark-fg { fill: none; stroke: var(--on-marigold); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.nav-links { display: flex; gap: 1.75rem; margin-left: auto; font-size: .9375rem; font-weight: 500; }
+.nav-links a { color: var(--on-jungle-muted); text-decoration: none; }
+.nav-links a:hover { color: var(--on-jungle); }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: center;
+  padding-block: clamp(1.5rem, 4vw, 3.5rem) clamp(3rem, 7vw, 5.5rem);
+}
+.hero-copy { display: grid; gap: 1.5rem; justify-items: start; }
+.lede { font-size: 1.1875rem; line-height: 1.55; color: var(--on-jungle-muted); max-width: 34rem; }
+.seg { display: inline-flex; padding: 4px; gap: 2px; border-radius: 999px; background: var(--jungle-raised); }
+.seg button {
+  font: 600 .9375rem/1 var(--body);
+  padding: .7rem 1.05rem;
+  border: 0; border-radius: 999px;
+  background: transparent; color: var(--on-jungle-muted);
+  cursor: pointer;
+}
+.seg button[aria-pressed="true"] { background: var(--on-jungle); color: var(--jungle); }
+.cta-row { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; align-items: center; }
+.platforms {
+  font: 400 .8125rem/1.5 var(--mono);
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--on-jungle-muted);
+}
+
+/* Phone demo */
+.phone-wrap { position: relative; display: flex; justify-content: center; }
+.phone-wrap::before {
+  content: "";
+  position: absolute; z-index: -1;
+  width: min(29rem, 125%); aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--marigold);
+  top: 50%; left: 50%;
+  transform: translate(-38%, -46%);
+}
+.phone {
+  width: 100%; max-width: 21.5rem;
+  background: var(--surface); color: var(--ink);
+  border-radius: 2.4rem;
+  padding: .7rem;
+  box-shadow: 0 0 0 1.5px color-mix(in srgb, var(--ink) 14%, transparent), 0 34px 60px -24px rgba(0, 0, 0, .6);
+}
+.phone-top { display: flex; justify-content: space-between; align-items: center; padding: .3rem .9rem .65rem; }
+.phone-brand { font: 400 1.0625rem/1 var(--display); }
+.phone-dot { width: .55rem; height: .55rem; border-radius: 50%; background: var(--marigold); }
+.screen {
+  background: var(--ground);
+  border-radius: 1.8rem;
+  padding: .9rem;
+  display: grid; gap: .75rem; align-content: start;
+  min-height: 34.5rem;
+}
+.app-head { display: flex; justify-content: space-between; align-items: baseline; font: 400 .75rem/1 var(--mono); color: var(--muted); }
+.app-head strong { font: 400 1.25rem/1.1 var(--display); color: var(--ink); }
+.app-note {
+  font-size: .8125rem; line-height: 1.4; color: var(--muted);
+  border: 1px dashed var(--line); border-radius: .8rem;
+  padding: .5rem .7rem;
+}
+.match { background: var(--surface); border: 1px solid var(--line); border-radius: 1.2rem; overflow: hidden; animation: arrive .35s ease; }
+@keyframes arrive { from { transform: translateY(10px); opacity: .5; } }
+.shot { position: relative; aspect-ratio: 16 / 10; }
+.shot svg, .thumb svg { display: block; width: 100%; height: 100%; }
+.shot-tag {
+  position: absolute; top: .6rem; left: .6rem;
+  font: 500 .6875rem/1 var(--mono); letter-spacing: .06em; text-transform: uppercase;
+  background: var(--marigold); color: var(--on-marigold);
+  padding: .4rem .6rem; border-radius: 999px;
+}
+.match-body { padding: .85rem .95rem .1rem; display: grid; gap: .2rem; }
+.match-body h3 { font-size: 1.1875rem; }
+.where { font-size: .875rem; color: var(--muted); }
+.price { font: 500 1.0625rem/1.3 var(--mono); margin-top: .35rem; font-variant-numeric: tabular-nums; }
+.price span { color: var(--muted); font-size: .875rem; font-weight: 400; }
+.terms { font-size: .8125rem; color: var(--muted); }
+.fits-label { font: 500 .6875rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--leaf); margin-top: .75rem; }
+.fits { list-style: none; margin: .4rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .3rem; }
+.fits li { font-size: .75rem; font-weight: 600; line-height: 1; background: var(--leaf-soft); color: var(--leaf); padding: .4rem .6rem; border-radius: 999px; }
+.fits li::before { content: "\2713\00a0"; }
+.actions { display: grid; grid-template-columns: 1fr 1.6fr; gap: .5rem; padding: .9rem .95rem .95rem; }
+.pill {
+  font: 600 .9375rem/1 var(--body);
+  padding: .85rem .5rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: transparent; color: var(--ink);
+  cursor: pointer;
+}
+.pill-yes { background: var(--leaf); border-color: var(--leaf); color: var(--on-leaf); }
+.sent { padding: .9rem .95rem .95rem; display: grid; gap: .6rem; }
+.sent p { font-size: .875rem; line-height: 1.45; background: var(--leaf-soft); border-radius: .8rem; padding: .7rem .8rem; }
+
+.mini {
+  display: grid; grid-template-columns: 4.25rem minmax(0, 1fr); gap: .75rem; align-items: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 1rem; padding: .5rem;
+}
+.thumb { aspect-ratio: 1; border-radius: .65rem; overflow: hidden; }
+.mini strong { display: block; font-size: .9375rem; line-height: 1.25; }
+.mini span { font: 400 .8125rem/1.4 var(--mono); color: var(--muted); }
+.reach { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+.reach div { background: var(--surface); border: 1px solid var(--line); border-radius: 1rem; padding: .65rem .8rem; font-size: .75rem; line-height: 1.3; color: var(--muted); }
+.reach b { display: block; font: 500 1.375rem/1.15 var(--mono); color: var(--ink); }
+.reach .hot { background: var(--marigold-soft); border-color: transparent; color: var(--ink); }
+.people-label { font: 500 .6875rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-top: .3rem; }
+.people { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.people li {
+  display: grid; grid-template-columns: 2.4rem minmax(0, 1fr) auto; gap: .6rem; align-items: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 1rem; padding: .6rem;
+}
+.avatar { width: 2.4rem; height: 2.4rem; border-radius: 50%; background: var(--leaf-soft); color: var(--leaf); display: grid; place-items: center; font: 500 .75rem/1 var(--mono); }
+.people strong { display: block; font-size: .875rem; line-height: 1.3; }
+.people span { display: block; font-size: .75rem; line-height: 1.35; color: var(--muted); }
+.people button {
+  font: 600 .75rem/1 var(--body);
+  padding: .6rem .75rem; border: 0; border-radius: 999px;
+  background: var(--marigold); color: var(--on-marigold);
+  cursor: pointer;
+}
+.people button[disabled] { background: var(--leaf-soft); color: var(--leaf); cursor: default; }
+
+/* The search today */
+.noise { display: grid; gap: 1.1rem; justify-items: center; }
+.pile { display: flex; flex-wrap: wrap; gap: .6rem; justify-content: center; max-width: 27rem; }
+.pile span {
+  font-size: .875rem; line-height: 1.35;
+  background: var(--surface); border: 1px solid var(--line); color: var(--muted);
+  padding: .55rem .85rem;
+  border-radius: 1rem 1rem 1rem .25rem;
+}
+.pile span:nth-child(odd) { transform: rotate(-2deg); }
+.pile span:nth-child(3n) { transform: rotate(2.5deg) translateY(3px); border-radius: 1rem 1rem .25rem 1rem; }
+.pile-count, .becomes { font: 500 .75rem/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.becomes { display: grid; justify-items: center; gap: .5rem; }
+.becomes::before, .becomes::after { content: ""; height: 1.25rem; border-left: 2px solid color-mix(in srgb, var(--ink) 22%, transparent); }
+.notif {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .85rem; align-items: center;
+  width: 100%; max-width: 24rem;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 1.2rem;
+  padding: .9rem 1.1rem;
+  box-shadow: var(--shadow);
+}
+.notif .mark { width: 2.5rem; height: 2.5rem; }
+.notif strong { display: block; font-size: .9375rem; line-height: 1.3; }
+.notif span { display: block; font-size: .875rem; line-height: 1.4; color: var(--muted); }
+
+/* Two lanes */
+.lanes { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.25rem; }
+.lane { border-radius: 1.5rem; padding: clamp(1.25rem, 3vw, 2.1rem); display: grid; gap: 1.6rem; align-content: start; }
+.lane-seek { background: var(--leaf-soft); }
+.lane-list { background: var(--marigold-soft); }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.3rem; counter-reset: step; }
+.steps li { display: grid; grid-template-columns: 2.25rem minmax(0, 1fr); gap: .9rem; counter-increment: step; }
+.steps li::before {
+  content: counter(step);
+  width: 2.25rem; height: 2.25rem; border-radius: 50%;
+  display: grid; place-items: center;
+  font: 500 .9375rem/1 var(--mono);
+  background: var(--leaf); color: var(--on-leaf);
+}
+.lane-list .steps li::before { background: var(--marigold); color: var(--on-marigold); }
+.steps p { font-size: .9688rem; line-height: 1.55; color: var(--muted); margin-top: .25rem; }
+.join {
+  --wire: color-mix(in srgb, var(--ink) 24%, transparent);
+  position: relative;
+  height: 2.25rem; margin-inline: 25%;
+  border: 2px solid var(--wire); border-top: 0;
+  border-radius: 0 0 1.25rem 1.25rem;
+}
+.join::after { content: ""; position: absolute; left: 50%; top: 100%; height: 1.5rem; border-left: 2px solid var(--wire); transform: translateX(-1px); }
+.meet {
+  margin: 1.5rem auto 0; max-width: 36rem;
+  background: var(--jungle); color: var(--on-jungle);
+  border-radius: 1.5rem;
+  padding: 1.75rem clamp(1.25rem, 3vw, 2.25rem);
+  display: grid; gap: .6rem; text-align: center;
+}
+.meet p { color: var(--on-jungle-muted); }
+
+/* Home profile lab */
+.lab { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 1.25rem; align-items: start; }
+.panel {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 1.5rem;
+  padding: clamp(1.1rem, 2.5vw, 1.75rem);
+  display: grid; gap: 1.3rem;
+}
+.field { display: grid; gap: .6rem; }
+.field-label {
+  font: 500 .75rem/1.2 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+}
+.field-label output { font-size: .9375rem; letter-spacing: 0; text-transform: none; color: var(--ink); font-variant-numeric: tabular-nums; }
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.chip {
+  font: 600 .875rem/1 var(--body);
+  padding: .6rem .9rem;
+  border-radius: 999px; border: 1.5px solid var(--line);
+  background: transparent; color: var(--ink);
+  cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--leaf); border-color: var(--leaf); color: var(--on-leaf); }
+input[type="range"] { width: 100%; accent-color: var(--leaf); margin: 0; }
+.results { display: grid; gap: .9rem; }
+.summary strong { font: 500 1.0625rem/1 var(--mono); color: var(--leaf); }
+.res-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.res {
+  display: grid; grid-template-columns: 3.5rem minmax(0, 1fr) auto; gap: .8rem; align-items: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 1rem;
+  padding: .5rem .9rem .5rem .5rem;
+}
+.res strong { display: block; font-size: .9375rem; line-height: 1.3; }
+.res-meta { font: 400 .8125rem/1.4 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.res-status {
+  font: 500 .6875rem/1 var(--mono); letter-spacing: .05em; text-transform: uppercase; white-space: nowrap;
+  padding: .45rem .65rem; border-radius: 999px; border: 1px solid transparent;
+}
+.res.hit { border-color: var(--leaf); }
+.res.hit .res-status { background: var(--leaf); color: var(--on-leaf); }
+.res.miss { background: transparent; }
+.res.miss .thumb { filter: grayscale(1); opacity: .55; }
+.res.miss strong { font-weight: 500; color: var(--muted); }
+.res.miss .res-status { color: var(--muted); border: 1px dashed var(--line); }
+
+.points { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.25rem, 3vw, 2.5rem); margin-top: clamp(2.25rem, 4vw, 3.5rem); }
+.point { display: grid; gap: .4rem; align-content: start; border-top: 2px solid var(--leaf); padding-top: 1rem; }
+.point p { font-size: .9688rem; line-height: 1.55; color: var(--muted); }
+.point-list { border-top-color: var(--marigold); }
+.benefits { display: grid; gap: 1.6rem; }
+
+/* Anatomy of a listing */
+.listing { background: var(--ground); border: 1px solid var(--line); border-radius: 1.5rem; overflow: hidden; }
+.listing .shot { aspect-ratio: 16 / 8; }
+.listing-body { padding: 1.25rem clamp(1.1rem, 2.5vw, 1.6rem) 1.4rem; display: grid; gap: 1rem; }
+.facts { margin: 0; }
+.facts div { display: grid; grid-template-columns: 6.25rem minmax(0, 1fr); gap: 1rem; padding: .6rem 0; border-top: 1px solid var(--line); }
+.facts dt { font: 500 .75rem/1.6 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.facts dd { margin: 0; font-size: .9375rem; line-height: 1.5; }
+.listing-note { font-size: .8125rem; line-height: 1.5; color: var(--muted); }
+
+/* Where */
+.areas { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .45rem; }
+.areas li { font: 500 .875rem/1 var(--mono); padding: .65rem .9rem; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); }
+.areas .next { border-style: dashed; background: transparent; color: var(--muted); }
+.where-side { display: grid; gap: 1.75rem; align-content: start; }
+.devices { margin: 0; display: grid; gap: .9rem; }
+.devices div { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 1rem; align-items: baseline; }
+.devices dt { font: 500 .8125rem/1.5 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+.devices dd { margin: 0; font-size: .9688rem; color: var(--muted); }
+
+/* Questions */
+.faq { max-width: 46rem; }
+.faq details { border-top: 1px solid var(--line); padding: 1.1rem 0; }
+.faq details:last-child { border-bottom: 1px solid var(--line); }
+.faq summary { font: 600 1.0625rem/1.4 var(--body); cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 1rem; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font: 400 1.25rem/1.2 var(--mono); color: var(--leaf); }
+.faq details[open] summary::after { content: "\2013"; }
+.faq details p { color: var(--muted); margin-top: .6rem; max-width: 40rem; }
+
+/* Demo CTA */
+.cta .prose p { color: var(--on-jungle-muted); }
+.fineprint { font-size: .8125rem; line-height: 1.5; color: var(--muted); }
+.foot {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 2rem;
+  margin-top: clamp(3rem, 7vw, 5rem);
+  padding-block: 1.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--on-jungle) 18%, transparent);
+  font-size: .875rem; color: var(--on-jungle-muted);
+}
+.foot em { font: 400 1rem/1 var(--display); font-style: normal; color: var(--on-jungle); }
+.cta.band { padding-bottom: 0; }
+
+@media (max-width: 900px) {
+  .hero-grid, .split, .lab { grid-template-columns: minmax(0, 1fr); }
+  .nav-links { display: none; }
+  .nav .btn { margin-left: auto; }
+}
+@media (max-width: 820px) {
+  .lanes, .points { grid-template-columns: minmax(0, 1fr); }
+  .join { height: 0; margin-inline: 0; border: 0; }
+  .join::after { top: 0; }
+}
+@media (max-width: 520px) {
+  .seg button { font-size: .875rem; padding: .65rem .8rem; }
+  .res { grid-template-columns: 3.5rem minmax(0, 1fr); }
+  .res-status { grid-column: 2; justify-self: start; }
+  .facts div, .devices div { grid-template-columns: minmax(0, 1fr); gap: .1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero kawung" id="top">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="#top">
+        <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect class="mark-bg" width="32" height="32" rx="10"/><path class="mark-fg" d="M8 17l8-8 8 8M11 15.5V23h10v-7.5"/></svg>
+        tinggal
+      </a>
+      <div class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#looking">Looking for a home</a>
+        <a href="#listing">Listing a home</a>
+        <a href="#where">Where</a>
+      </div>
+      <a class="btn btn-outline" href="app/">Try the demo</a>
+    </nav>
+
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="seg" role="group" aria-label="Which side are you on?">
+          <button type="button" id="side-seek" data-side="seek" aria-pressed="true">Looking for a home</button>
+          <button type="button" id="side-list" data-side="list" aria-pressed="false">Listing a home</button>
+        </div>
+        <h1 id="hero-title">Describe it once. The right home finds you.</h1>
+        <p class="lede" id="hero-lede">Tinggal matches people looking for a home with the landlords, sellers and agents who have one. Set your areas, budget and must-haves, then get a notification when a home fits. Tap interested or pass.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="app/" id="hero-cta">Try the demo</a>
+          <a class="btn btn-text" href="#how">See how matching works</a>
+        </div>
+        <p class="platforms">Web · iOS · Android · Starting in Bali</p>
+      </div>
+
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-top"><span class="phone-brand">tinggal</span><span class="phone-dot" aria-hidden="true"></span></div>
+          <div class="screen" id="screen"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="band" id="why">
+  <div class="wrap split">
+    <div class="prose">
+      <p class="eyebrow eyebrow-plain">The search today</p>
+      <h2>House hunting in Bali is a second job.</h2>
+      <p>The good homes are scattered across Facebook groups, WhatsApp broadcasts and a dozen listing sites. You scroll every day, message strangers for basics like price and location, and half the posts are already gone.</p>
+      <p>Owners and agents get the other half of the same problem: a stream of "still available?" from people the home never suited.</p>
+      <p>Tinggal turns the search around. Nobody browses. Each side says what they want or what they have, once, and hears about the other only when it fits.</p>
+    </div>
+    <div class="noise">
+      <div class="pile" role="img" aria-label="Typical messages from housing groups: still available, PM sent, price, location, already rented.">
+        <span>Still available?</span>
+        <span>PM sent</span>
+        <span>Price?</span>
+        <span>Looking for a 2BR near Canggu, yearly. Budget in comments.</span>
+        <span>Loc?</span>
+        <span>Sorry, already rented. Forgot to remove the post.</span>
+        <span>PM for price</span>
+        <span>Up</span>
+        <span>Is this monthly or yearly?</span>
+      </div>
+      <p class="pile-count">Nine groups · three chats · every day</p>
+      <p class="becomes">becomes</p>
+      <div class="notif">
+        <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect class="mark-bg" width="32" height="32" rx="10"/><path class="mark-fg" d="M8 17l8-8 8 8M11 15.5V23h10v-7.5"/></svg>
+        <div>
+          <strong>A home matches your profile</strong>
+          <span>2-bedroom villa with pool in Pererenan, IDR 350M / year</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-surface" id="how">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow eyebrow-plain">How it works</p>
+      <h2>One match, seen from both sides.</h2>
+      <p class="sub">Tinggal works like a matchmaker. Each side sets things up once, and a home and a person only meet when the details line up.</p>
+    </div>
+    <div class="lanes">
+      <div class="lane lane-seek">
+        <h3>If you're renting or buying</h3>
+        <ol class="steps">
+          <li><div><h4>Describe the home you want</h4><p>Areas, budget, rent or buy, bedrooms, lease length and the things you won't compromise on. It takes a few minutes, once.</p></div></li>
+          <li><div><h4>Get on with your life</h4><p>There is no feed to scroll. Tinggal checks every new listing against your home profile.</p></div></li>
+          <li><div><h4>Say interested or pass</h4><p>A match arrives with photos, location and price. One tap either way, and a pass stays between you and the app.</p></div></li>
+        </ol>
+      </div>
+      <div class="lane lane-list">
+        <h3>If you're a landlord, seller or agent</h3>
+        <ol class="steps">
+          <li><div><h4>List the home once</h4><p>Photos, map location, price and terms. One listing, no reposting and no bumping.</p></div></li>
+          <li><div><h4>Tinggal finds the people it fits</h4><p>Your listing goes to the people whose home profile it matches, and to nobody else.</p></div></li>
+          <li><div><h4>See who said yes</h4><p>You get a notification for each interested person, with their profile attached.</p></div></li>
+        </ol>
+      </div>
+    </div>
+    <div class="join" aria-hidden="true"></div>
+    <div class="meet">
+      <h3>Then you talk directly</h3>
+      <p>The owner or agent gets in touch with the interested person. Questions, viewing, contract: that part is between the two of you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="looking">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow">For renters and buyers</p>
+      <h2>Your home profile does the searching.</h2>
+      <p class="sub">Try it. Change the profile and see which new listings would reach you. Everything else stays quiet.</p>
+    </div>
+
+    <div class="lab">
+      <div class="panel" id="profile">
+        <h3>Home profile</h3>
+        <div class="field">
+          <span class="field-label">I want to</span>
+          <div class="chips">
+            <button type="button" class="chip" id="mode-rent" data-mode="rent" aria-pressed="true">Rent</button>
+            <button type="button" class="chip" id="mode-buy" data-mode="buy" aria-pressed="false">Buy</button>
+          </div>
+        </div>
+        <div class="field">
+          <span class="field-label">Areas</span>
+          <div class="chips" id="area-chips"></div>
+        </div>
+        <div class="field">
+          <label class="field-label" for="budget">Budget up to <output id="budget-out" for="budget">IDR 400M / year</output></label>
+          <input type="range" id="budget" min="100" max="600" step="10" value="400">
+        </div>
+        <div class="field">
+          <span class="field-label">Bedrooms</span>
+          <div class="chips">
+            <button type="button" class="chip" id="br-0" data-br="0" aria-pressed="false">Any</button>
+            <button type="button" class="chip" id="br-1" data-br="1" aria-pressed="false">1+</button>
+            <button type="button" class="chip" id="br-2" data-br="2" aria-pressed="true">2+</button>
+            <button type="button" class="chip" id="br-3" data-br="3" aria-pressed="false">3+</button>
+          </div>
+        </div>
+        <div class="field">
+          <span class="field-label">Must have</span>
+          <div class="chips" id="must-chips"></div>
+        </div>
+      </div>
+
+      <div class="results">
+        <p class="summary" id="summary" aria-live="polite"></p>
+        <ul class="res-list" id="res-list"></ul>
+        <p class="fineprint">Example listings, to show how matching works.</p>
+      </div>
+    </div>
+
+    <div class="points">
+      <div class="point">
+        <h4>Not in a hurry? Good.</h4>
+        <p>Most people aren't moving this month. They have a place and would move for a better one. Leave your profile on and let the upgrade come to you.</p>
+      </div>
+      <div class="point">
+        <h4>A pass is silent</h4>
+        <p>The owner hears from you only when you tap interested. No awkward replies, no chats to keep alive.</p>
+      </div>
+      <div class="point">
+        <h4>Rent or buy</h4>
+        <p>Monthly or yearly rentals, leasehold or freehold purchases. Set your profile to one, or keep an eye on both.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band band-surface" id="listing">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow eyebrow-list">For landlords, sellers and agents</p>
+      <h2>Fewer messages. Better ones.</h2>
+      <p class="sub">A Tinggal listing answers the first ten questions up front, so the people who reach you already know the price, the place and the terms.</p>
+    </div>
+    <div class="split split-top">
+      <article class="listing">
+        <div class="shot" data-scene="dawn vToP" data-alt="Illustration of a thatched villa with a pool and a volcano behind it"><span class="shot-tag">For rent</span></div>
+        <div class="listing-body">
+          <h3>2-bedroom villa with pool</h3>
+          <dl class="facts">
+            <div><dt>Location</dt><dd>Pererenan, 600 m to the beach. Pinned on the map.</dd></div>
+            <div><dt>Price</dt><dd>IDR 350M / year</dd></div>
+            <div><dt>Terms</dt><dd>Yearly lease, paid upfront. Up to 3 years.</dd></div>
+            <div><dt>Home</dt><dd>2 bed · 2 bath · 140 m² on 2 are of land</dd></div>
+            <div><dt>Features</dt><dd>Private pool · Enclosed living · AC · Fibre wifi · Car parking</dd></div>
+            <div><dt>Available</dt><dd>1 February 2027</dd></div>
+          </dl>
+          <p class="listing-note">For sale listings also state leasehold or freehold, and the years left on a lease.</p>
+        </div>
+      </article>
+      <div class="benefits">
+        <div class="point point-list">
+          <h4>Only the people it fits</h4>
+          <p>Your listing reaches people whose profile matches its area, price and terms. Nobody else is notified, so nobody else writes.</p>
+        </div>
+        <div class="point point-list">
+          <h4>Interest you can act on</h4>
+          <p>Everyone who taps interested comes with a profile: budget, move-in date, lease length and who is moving in. You decide who to call first.</p>
+        </div>
+        <div class="point point-list">
+          <h4>List once</h4>
+          <p>No reposting in ten groups and no answering "price?" in the comments. Update or pause the listing in one place.</p>
+        </div>
+        <div class="point point-list">
+          <h4>Made for agents too</h4>
+          <p>Keep a whole portfolio in one account and see the interest for each home, whether it is a rental, a sale or a plot of land.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="where">
+  <div class="wrap split split-top">
+    <div class="prose">
+      <p class="eyebrow eyebrow-plain">Where</p>
+      <h2>Bali first. Built to travel.</h2>
+      <p>Tinggal starts in Bali, where homes change hands through group posts, broadcasts and word of mouth. The same is true in a lot of places. Wherever the best listings live in group chats, matching beats searching.</p>
+    </div>
+    <div class="where-side">
+      <ul class="areas" aria-label="Areas at launch">
+        <li>Canggu</li><li>Pererenan</li><li>Seseh</li><li>Berawa</li><li>Umalas</li><li>Seminyak</li><li>Ubud</li><li>Sanur</li><li>Uluwatu</li><li>Jimbaran</li><li class="next">Your city next</li>
+      </ul>
+      <dl class="devices">
+        <div><dt>Web</dt><dd>Build a profile or a listing on a big screen.</dd></div>
+        <div><dt>iOS</dt><dd>Get the match where you'll see it, and answer in one tap.</dd></div>
+        <div><dt>Android</dt><dd>The same account and the same matches on every device.</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="band band-surface" id="questions">
+  <div class="wrap">
+    <div class="head">
+      <h2>Questions people ask first</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Do I need to be moving soon?</summary>
+        <p>No. Tinggal is made for people who are keeping an eye out. Set up your profile, carry on, and you'll hear from us only when a home fits. If you are in a hurry the same profile works, you'll just say interested more often.</p>
+      </details>
+      <details>
+        <summary>Who contacts whom?</summary>
+        <p>The owner, seller or agent contacts the person looking. When you mark a match as interested, they get a notification with your profile and can reach out directly. If you pass, they never hear about it.</p>
+      </details>
+      <details>
+        <summary>Can I use Tinggal to buy a home?</summary>
+        <p>Yes. A home profile can be for renting, buying or both. Listings for sale state whether the home is leasehold or freehold, and how many years are left on a lease.</p>
+      </details>
+      <details>
+        <summary>I'm an agent with many listings. Is this for me?</summary>
+        <p>Yes. Agents list on behalf of owners and see the interest for each home. Every person who reaches you has already seen the price, location and terms, and said yes.</p>
+      </details>
+      <details>
+        <summary>Is Tinggal only for Bali?</summary>
+        <p>Bali comes first because that is where the search is hardest. The matching isn't tied to one place, and new areas open as listings and home profiles arrive there.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="band cta kawung" id="demo">
+  <div class="wrap">
+    <div class="split">
+      <div class="prose">
+        <h2>See how Tinggal works.</h2>
+        <p>Explore the seeker, lister and admin views with preloaded sample data. The demo runs entirely in your browser, without a Firebase account or backend.</p>
+      </div>
+      <div class="prose">
+        <p>Choose a preloaded role in the app. Demo changes stay in memory and reset when you reload.</p>
+        <a class="btn btn-primary" href="app/">Open the web demo</a>
+      </div>
+    </div>
+    <footer class="foot">
+      <span><em>tinggal</em> &nbsp;Indonesian, verb: to live somewhere, to stay.</span>
+      <span>© 2026 Tinggal</span>
+    </footer>
+  </div>
+</section>
+
+</main>
+
+<script>
+(function () {
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  /* ---------- Listing pictures: small drawn scenes, swap for real photos later ---------- */
+  var PAL = {
+    dawn: { sky: ['#F6B48C', '#FDE6C8'], sun: '#FFF3CF', far: '#86A79C', sea: '#7FC4C4', hill: '#58A27C', mid: '#35835F', fore: '#22664A', palm: '#1B5139' },
+    day:  { sky: ['#86CDE6', '#E2F4EF'], sun: '#FFF7DA', far: '#74AAAA', sea: '#3FB1C4', hill: '#6BB884', mid: '#439C6B', fore: '#2B7C54', palm: '#1E5C3F' },
+    dusk: { sky: ['#4E4686', '#F3A27C'], sun: '#FFDCA6', far: '#46507C', sea: '#3B6C8F', hill: '#2F6E66', mid: '#225950', fore: '#16433B', palm: '#0F302B' }
+  };
+  var sceneId = 0;
+  // spec: "<time> <flags>"  v volcano, s sea, r rice terraces, o pool, P palm, T thatched villa, M modern villa
+  function scene(spec, alt) {
+    var parts = spec.split(' '), p = PAL[parts[0]], f = parts[1] || '', id = 'sky' + (++sceneId);
+    var has = function (c) { return f.indexOf(c) > -1; };
+    var sea = has('s');
+    var s = '<svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" ' +
+      (alt ? 'role="img" aria-label="' + alt + '"' : 'aria-hidden="true"') + '>' +
+      '<defs><linearGradient id="' + id + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + p.sky[0] + '"/><stop offset="1" stop-color="' + p.sky[1] + '"/></linearGradient></defs>' +
+      '<rect width="320" height="200" fill="url(#' + id + ')"/>' +
+      '<circle cx="' + (sea ? 232 : 256) + '" cy="' + (parts[0] === 'dusk' ? 92 : 44) + '" r="15" fill="' + p.sun + '"/>';
+    if (has('v')) s += '<polygon points="96,132 178,58 192,64 204,59 292,132" fill="' + p.far + '"/>';
+    if (sea) s += '<rect y="104" width="320" height="60" fill="' + p.sea + '"/><rect y="110" width="320" height="2" fill="' + p.sun + '" opacity=".35"/>' +
+      '<path d="M0 146 Q70 116 150 140 T320 152 V200 H0Z" fill="' + p.hill + '"/>';
+    else s += '<path d="M0 126 Q80 104 170 122 T320 114 V200 H0Z" fill="' + p.hill + '"/>';
+    s += '<path d="M0 150 Q110 128 200 148 T320 142 V200 H0Z" fill="' + p.mid + '"/>';
+    if (has('r')) [10, 20, 30].forEach(function (d) {
+      s += '<path d="M0 ' + (150 + d) + ' Q110 ' + (128 + d) + ' 200 ' + (148 + d) + ' T320 ' + (142 + d) + '" fill="none" stroke="' + p.hill + '" stroke-width="2.5"/>';
+    });
+    if (has('T')) s += '<rect x="150" y="116" width="92" height="34" fill="#F4EBDD"/><rect x="158" y="124" width="30" height="26" fill="#2D4B4A"/><rect x="196" y="124" width="38" height="26" fill="#3E6665"/>' +
+      '<polygon points="136,118 196,84 256,118" fill="#8A6A45"/><rect x="138" y="150" width="116" height="5" fill="#B48A5C"/>';
+    if (has('M')) s += '<rect x="150" y="110" width="96" height="40" fill="#F7F2E9"/><rect x="144" y="104" width="108" height="7" fill="#DDD3C3"/>' +
+      '<rect x="158" y="119" width="50" height="31" fill="#2D4B4A"/><rect x="216" y="119" width="22" height="31" fill="#C98F5A"/><rect x="138" y="150" width="116" height="5" fill="#B48A5C"/>';
+    s += '<path d="M0 178 Q130 160 320 182 V200 H0Z" fill="' + p.fore + '"/>';
+    if (has('o')) s += '<rect x="122" y="163" width="136" height="19" rx="5" fill="#48C3C8"/><rect x="132" y="169" width="46" height="2.5" rx="1.25" fill="#FFFFFF" opacity=".6"/>';
+    if (has('P')) {
+      s += '<path d="M62 186 Q56 142 70 104" fill="none" stroke="#6B4F35" stroke-width="5" stroke-linecap="round"/>';
+      ['50 90 34 102', '54 80 42 72', '72 82 66 68', '88 82 102 76', '92 92 108 104'].forEach(function (q) {
+        s += '<path d="M70 104 Q' + q + '" fill="none" stroke="' + p.palm + '" stroke-width="5" stroke-linecap="round"/>';
+      });
+    }
+    return s + '</svg>';
+  }
+  $$('[data-scene]').forEach(function (el) {
+    el.insertAdjacentHTML('afterbegin', scene(el.dataset.scene, el.dataset.alt));
+  });
+
+  /* ---------- Hero: the same match seen from each side ---------- */
+  var SIDES = {
+    seek: {
+      title: 'Describe it once. The right home finds you.',
+      lede: 'Tinggal matches people looking for a home with the landlords, sellers and agents who have one. Set your areas, budget and must-haves, then get a notification when a home fits. Tap interested or pass.',
+      cta: 'Try the demo'
+    },
+    list: {
+      title: 'List it once. Hear from the people it fits.',
+      lede: 'Add your villa, house or land with photos, location and price. Tinggal shows it to the people whose home profile it matches and tells you who is interested. Then you contact them directly.',
+      cta: 'Try the demo'
+    }
+  };
+  var MATCHES = [
+    { title: '2-bedroom villa with pool', area: 'Pererenan, Canggu', price: 'IDR 350M', terms: 'Yearly lease · free from 1 Feb',
+      fits: ['Pererenan', 'Under IDR 400M', '2 bedrooms', 'Pool', 'Enclosed living'], who: 'Made, the owner',
+      art: 'dawn vToP', alt: 'Illustration of a thatched villa with a pool' },
+    { title: '2-bedroom house, rice field view', area: 'Seseh, Mengwi', price: 'IDR 280M', terms: 'Yearly lease · free from 15 Jan',
+      fits: ['Seseh', 'Under IDR 400M', '2 bedrooms', 'Enclosed living', 'Pets welcome'], who: 'Ayu, the agent',
+      art: 'day rMP', alt: 'Illustration of a modern house among rice terraces' },
+    { title: '3-bedroom villa near the beach', area: 'Cemagi, Mengwi', price: 'IDR 390M', terms: 'Yearly lease · free from 1 Mar',
+      fits: ['Cemagi', 'Under IDR 400M', '3 bedrooms', 'Pool', 'Enclosed living'], who: 'Wayan, the owner',
+      art: 'dusk sToP', alt: 'Illustration of a villa above the sea at sunset' }
+  ];
+  var PEOPLE = [
+    { ini: 'SL', name: 'Sofia &amp; Lars', line: 'Couple · from 1 Feb · 12 months', budget: 'Budget up to IDR 400M / year' },
+    { ini: 'KW', name: 'Komang W.', line: 'Family of 3 · from March · 2 years', budget: 'Budget up to IDR 360M / year' },
+    { ini: 'DR', name: 'Daniel R.', line: 'Works remotely · from January · 12 months', budget: 'Budget up to IDR 380M / year' }
+  ];
+  var screen = $('#screen'), side = 'seek', mi = 0, contacted = {};
+
+  function renderSeek(note) {
+    var m = MATCHES[mi];
+    screen.innerHTML =
+      '<div class="app-head"><strong>New match</strong><span>' + (mi + 1) + ' of ' + MATCHES.length + '</span></div>' +
+      (note ? '<p class="app-note">' + note + '</p>' : '') +
+      '<article class="match">' +
+        '<div class="shot">' + scene(m.art, m.alt) + '<span class="shot-tag">For rent</span></div>' +
+        '<div class="match-body"><h3>' + m.title + '</h3><p class="where">' + m.area + '</p>' +
+          '<p class="price">' + m.price + ' <span>/ year</span></p><p class="terms">' + m.terms + '</p>' +
+          '<p class="fits-label">Fits your profile</p><ul class="fits">' + m.fits.map(function (f) { return '<li>' + f + '</li>'; }).join('') + '</ul></div>' +
+        '<div class="actions" id="match-actions">' +
+          '<button type="button" class="pill" data-act="pass">Pass</button>' +
+          '<button type="button" class="pill pill-yes" data-act="yes">I\'m interested</button></div>' +
+      '</article>';
+  }
+  function renderList() {
+    var n = Object.keys(contacted).length;
+    screen.innerHTML =
+      '<div class="app-head"><strong>Your listing</strong><span>Live</span></div>' +
+      '<div class="mini"><div class="thumb">' + scene('dawn vToP') + '</div><div><strong>2-bedroom villa with pool</strong><span>Pererenan · IDR 350M / year</span></div></div>' +
+      '<div class="reach"><div><b>41</b>home profiles it fits</div><div class="hot"><b>' + PEOPLE.length + '</b>said interested</div></div>' +
+      '<p class="people-label">Interested in your home' + (n ? ' · ' + n + ' contacted' : '') + '</p>' +
+      '<ul class="people">' + PEOPLE.map(function (p, i) {
+        return '<li><div class="avatar" aria-hidden="true">' + p.ini + '</div><div><strong>' + p.name + '</strong><span>' + p.line + '</span><span>' + p.budget + '</span></div>' +
+          (contacted[i] ? '<button type="button" disabled>Contacted</button>' : '<button type="button" data-act="contact" data-i="' + i + '">Contact</button>') + '</li>';
+      }).join('') + '</ul>' +
+      '<p class="app-note">Only people whose profile fits ever see this listing. These three tapped interested.</p>';
+  }
+  function setSide(next) {
+    side = next;
+    $$('[data-side]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.side === side)); });
+    $('#hero-title').textContent = SIDES[side].title;
+    $('#hero-lede').textContent = SIDES[side].lede;
+    $('#hero-cta').textContent = SIDES[side].cta;
+    if (side === 'seek') renderSeek(); else renderList();
+  }
+  $$('[data-side]').forEach(function (b) { b.addEventListener('click', function () { setSide(b.dataset.side); }); });
+  screen.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-act]');
+    if (!b) return;
+    var act = b.dataset.act;
+    if (act === 'yes') {
+      $('#match-actions').outerHTML = '<div class="sent"><p><strong>Sent to ' + MATCHES[mi].who + '.</strong> They can now see your profile and contact you directly.</p>' +
+        '<button type="button" class="pill" data-act="next">Next match</button></div>';
+    } else if (act === 'pass' || act === 'next') {
+      mi = (mi + 1) % MATCHES.length;
+      renderSeek(act === 'pass' ? 'Passed. The owner never hears about it.' : '');
+    } else if (act === 'contact') {
+      contacted[b.dataset.i] = true;
+      renderList();
+    }
+  });
+  renderSeek();
+
+  /* ---------- Home profile lab ---------- */
+  var AREAS = ['Pererenan', 'Seseh', 'Ubud', 'Sanur', 'Uluwatu'];
+  var MODES = {
+    rent: { min: 100, max: 600, step: 10, start: 400, fmt: function (v) { return 'IDR ' + v + 'M / year'; },
+      musts: [['pool', 'Pool', 'No pool'], ['pets', 'Pets welcome', 'No pets allowed']] },
+    buy: { min: 1, max: 15, step: 0.5, start: 5, fmt: function (v) { return 'IDR ' + v + 'bn'; },
+      musts: [['pool', 'Pool', 'No pool'], ['freehold', 'Freehold', 'Leasehold only']] }
+  };
+  var HOMES = {
+    rent: [
+      { t: '2-bedroom villa with pool', a: 'Pererenan', p: 350, br: 2, tags: ['pool'], art: 'dawn vToP' },
+      { t: '2-bedroom house, rice field view', a: 'Seseh', p: 280, br: 2, tags: ['pets'], art: 'day rMP' },
+      { t: '3-bedroom family villa', a: 'Sanur', p: 420, br: 3, tags: ['pool', 'pets'], art: 'day sMoP' },
+      { t: '1-bedroom joglo with garden', a: 'Ubud', p: 160, br: 1, tags: ['pets'], art: 'dawn vrTP' },
+      { t: '3-bedroom cliffside villa', a: 'Uluwatu', p: 520, br: 3, tags: ['pool'], art: 'dusk sToP' },
+      { t: '1-bedroom loft near the beach', a: 'Pererenan', p: 210, br: 1, tags: [], art: 'dusk MP' }
+    ],
+    buy: [
+      { t: '2-bedroom villa, leasehold 27 years', a: 'Pererenan', p: 4.2, br: 2, tags: ['pool'], art: 'dawn vToP' },
+      { t: '3-bedroom villa, freehold', a: 'Sanur', p: 9.5, br: 3, tags: ['pool', 'freehold'], art: 'day sMoP' },
+      { t: '2-bedroom townhouse, leasehold 22 years', a: 'Ubud', p: 2.9, br: 2, tags: [], art: 'day rMP' },
+      { t: '3-bedroom villa, leasehold 25 years', a: 'Seseh', p: 5.8, br: 3, tags: ['pool'], art: 'dawn rToP' },
+      { t: '4-bedroom villa, freehold', a: 'Uluwatu', p: 14, br: 4, tags: ['pool', 'freehold'], art: 'dusk sToP' },
+      { t: '1-bedroom villa, leasehold 18 years', a: 'Pererenan', p: 2.1, br: 1, tags: ['pool'], art: 'dusk vTo' }
+    ]
+  };
+  var lab = { mode: 'rent', areas: { Pererenan: true, Seseh: true }, max: 400, br: 2, musts: {} };
+  var budget = $('#budget');
+
+  $('#area-chips').innerHTML = AREAS.map(function (a) {
+    return '<button type="button" class="chip" id="area-' + a.toLowerCase() + '" data-area="' + a + '">' + a + '</button>';
+  }).join('');
+
+  function renderLab() {
+    var M = MODES[lab.mode], homes = HOMES[lab.mode], hits = 0;
+    $$('[data-mode]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.mode === lab.mode)); });
+    $$('[data-area]').forEach(function (b) { b.setAttribute('aria-pressed', String(!!lab.areas[b.dataset.area])); });
+    $$('[data-br]').forEach(function (b) { b.setAttribute('aria-pressed', String(+b.dataset.br === lab.br)); });
+    $('#must-chips').innerHTML = M.musts.map(function (m) {
+      return '<button type="button" class="chip" id="must-' + m[0] + '" data-must="' + m[0] + '" aria-pressed="' + !!lab.musts[m[0]] + '">' + m[1] + '</button>';
+    }).join('');
+    $('#budget-out').textContent = M.fmt(lab.max);
+    $('#res-list').innerHTML = homes.map(function (h) {
+      var why = '';
+      if (!lab.areas[h.a]) why = 'Outside your areas';
+      else if (h.p > lab.max) why = 'Over your budget';
+      else if (h.br < lab.br) why = 'Too few bedrooms';
+      else M.musts.forEach(function (m) { if (!why && lab.musts[m[0]] && h.tags.indexOf(m[0]) < 0) why = m[2]; });
+      if (!why) hits++;
+      return '<li class="res ' + (why ? 'miss' : 'hit') + '"><div class="thumb">' + scene(h.art) + '</div>' +
+        '<div><strong>' + h.t + '</strong><span class="res-meta">' + h.a + ' · ' + M.fmt(h.p) + '</span></div>' +
+        '<span class="res-status">' + (why || 'Notifies you') + '</span></li>';
+    }).join('');
+    var n = homes.length;
+    $('#summary').innerHTML = '<strong>' + hits + ' of ' + n + '</strong> new listings would reach you. ' +
+      (hits === n ? 'Nothing is filtered out.' : hits === 0 ? 'All of them stay quiet. Loosen the profile to hear more.' : 'The other ' + (n - hits) + ' stay quiet.');
+  }
+  $('#profile').addEventListener('click', function (e) {
+    var b = e.target.closest('button');
+    if (!b) return;
+    var d = b.dataset;
+    if (d.mode && d.mode !== lab.mode) {
+      var M = MODES[d.mode];
+      lab.mode = d.mode; lab.max = M.start; lab.musts = {};
+      budget.min = M.min; budget.max = M.max; budget.step = M.step; budget.value = M.start;
+    } else if (d.area) {
+      if (lab.areas[d.area]) delete lab.areas[d.area]; else lab.areas[d.area] = true;
+    } else if (d.br) {
+      lab.br = +d.br;
+    } else if (d.must) {
+      if (lab.musts[d.must]) delete lab.musts[d.must]; else lab.musts[d.must] = true;
+    }
+    renderLab();
+    if (d.must) { var again = $('#must-' + d.must); if (again) again.focus(); }
+  });
+  budget.addEventListener('input', function () { lab.max = +budget.value; renderLab(); });
+  renderLab();
+
+})();
+</script>
+</body>
+</html>

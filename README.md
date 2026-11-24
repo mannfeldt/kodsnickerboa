@@ -1,8 +1,8 @@
 # Kodsnickerboa
 
 The portfolio page at <https://kodsnickerboa.com>, plus the pages the apps link
-to (privacy policies, download and invite links) and the web version of
-Slotcars at `/slotcars/` and Widas Mattekasse at `/widasmattekasse/`.
+to (privacy policies, download and invite links) and the web versions of Slotcars
+at `/slotcars/`, Widas Mattekasse at `/widasmattekasse/`, and Tinggal at `/tinggal/`.
 
 This is a dependency-free static site. The deployable files are served
 directly from the repository root; there is no framework, package manager, or
@@ -93,6 +93,26 @@ Commit the output for Cloudflare Pages. The root `_redirects` file rewrites
 direct requests for Flutter routes to the app shell. Update those rules
 when the Flutter routes change. The app uses the existing Widas Mattekasse
 Firebase project for Auth and Firestore.
+
+
+## Tinggal
+
+The English landing page is at <https://kodsnickerboa.com/tinggal/>. The static
+web demo is at <https://kodsnickerboa.com/tinggal/app/>.
+
+To update them, run this from the repository root. It uses the sibling `../tinggal4`
+checkout by default; pass another Tinggal checkout path as an argument if needed:
+
+```sh
+scripts/build-tinggal.sh
+```
+
+The script builds Flutter with `--base-href /tinggal/app/`, bundles CanvasKit
+locally, enables `STATIC_DEMO=true`, copies the landing page and generated app
+files into `tinggal/`, and omits the Firebase Messaging service worker. The demo
+uses bundled mock data and makes no Firebase calls. Its hash-based routes work on
+Cloudflare Pages without extra `_redirects` entries. Commit the output for Pages
+to serve it.
 
 ## Local preview
 
