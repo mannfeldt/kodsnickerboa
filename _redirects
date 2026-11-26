@@ -7,3 +7,14 @@
 /widasmattekasse/app/lek/:id /widasmattekasse/app/ 200
 /widasmattekasse/app/admin/:section /widasmattekasse/app/ 200
 /widasmattekasse/app/admin/lek/:id /widasmattekasse/app/ 200
+
+# Fikakassen was renamed Fikakassan. Paths are listed one by one on purpose:
+# a /fikakassen/* rule would also redirect /fikakassen/app/offline_worker.js,
+# which must be served as is (see the comment in that file).
+/fikakassen /fikakassan/ 301
+/fikakassen/ /fikakassan/ 301
+/fikakassen/index.html /fikakassan/ 301
+/fikakassen/app /fikakassan/app/ 301
+/fikakassen/app/ /fikakassan/app/ 301
+/fikakassen/app/index.html /fikakassan/app/ 301
+/fikakassen/assets/* /fikakassan/assets/:splat 301

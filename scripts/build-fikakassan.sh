@@ -1,16 +1,16 @@
 #!/bin/sh
-# Builds the Fikakassen web app for https://kodsnickerboa.com/fikakassen/app/.
-# Usage: scripts/build-fikakassen.sh [path to the fikakassen project]
+# Builds the Fikakassan web app for https://kodsnickerboa.com/fikakassan/app/.
+# Usage: scripts/build-fikakassan.sh [path to the fikakassan project]
 set -eu
 
 site="$(cd "$(dirname "$0")/.." && pwd)"
 app="$(cd "${1:-$site/../fikakassen2}" && pwd)"
-destination="$site/fikakassen/app"
+destination="$site/fikakassan/app"
 
 # The project's own build script bundles CanvasKit, lists every file in
 # offline_files.json and stamps offline_worker.js, so the till keeps working
 # without reception after the first visit.
-(cd "$app" && tool/build_web.sh --release --base-href /fikakassen/app/)
+(cd "$app" && tool/build_web.sh --release --base-href /fikakassan/app/)
 
 # Only the Flutter build directory is generated. The landing page sits above it.
 # Leave out exactly what tool/build_web.sh leaves out of offline_files.json:
@@ -24,4 +24,4 @@ rsync -a --delete \
   --exclude '/canvaskit/skwasm*' \
   "$app/build/web/" "$destination/"
 
-echo "Fikakassen copied to $destination"
+echo "Fikakassan copied to $destination"

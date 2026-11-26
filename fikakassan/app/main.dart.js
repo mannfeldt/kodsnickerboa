@@ -8244,7 +8244,7 @@ bgF(a,b,c){var s,r=a.r_(),q=t.H7,p=A.b([],q)
 for(s=J.aC(b);s.p();)p.push(A.aRN(s.gK()))
 q=A.b([],q)
 for(s=J.aC(c);s.p();)q.push(A.aRO(s.gK()))
-return A.aFQ(A.aD(["app","Fikakassen","version",1,"exportedAt",r,"lists",p,"sales",q],t.N,t.K),null,"  ")},
+return A.aFQ(A.aD(["app","Fikakassan","version",1,"exportedAt",r,"lists",p,"sales",q],t.N,t.K),null,"  ")},
 b_h(a){var s,r,q,p
 for(s=a.length,r=t.N,q=0,p="\ufeff";q<a.length;a.length===s||(0,A.t)(a),++q)p=p+B.b.fv(a[q],A.bjh(),r).bu(0,";")+"\r\n"
 return p.charCodeAt(0)==0?p:p},
@@ -48755,7 +48755,7 @@ r[6]=f+r[6]>>>0
 r[7]=e+r[7]>>>0}}
 A.a8X.prototype={}
 A.Op.prototype={
-fM(a,b){return new A.xC(b.df($.b4I(),t.aq),new A.adD(),"Fikakassen",$.b4r(),B.FV,B.a4O,B.a3I,!1,null)}}
+fM(a,b){return new A.xC(b.df($.b4I(),t.aq),new A.adD(),"Fikakassan",$.b4r(),B.FV,B.a4O,B.a3I,!1,null)}}
 A.adD.prototype={
 $2(a,b){var s=A.bQ(a,null,t.l).w,r=s.a_j(s.gdP().wF(0,1.2,0.9))
 b.toString
@@ -49350,7 +49350,7 @@ return A.bs(A.b([new A.aa7(s.c,r),A.cr(s.a.f,1),new A.a2v(s.b,r)],t.p),B.an,B.p,
 $S:214}
 A.aaW.prototype={
 J(a){var s=null
-return A.aL("Fikakassen",s,s,s,s,s,A.rv(24,B.G),s,s)}}
+return A.aL("Fikakassan",s,s,s,s,s,A.rv(24,B.G),s,s)}}
 A.a93.prototype={
 J(a){var s,r,q,p=null,o=A.b([B.adq],t.p)
 for(s=this.c,r=0;r<3;++r){q=B.DE[r]
@@ -49939,7 +49939,7 @@ n=p.a
 p=p.b
 q=new A.x(n,p,n+o.a,p+o.b)}p=Date.now()
 s=2
-return A.p(A.aT4(b,"fikakassen-"+e+"-"+$.b3v().k5(new A.cQ(p,0,!1))+"."+c,d,q),$async$t8)
+return A.p(A.aT4(b,"fikakassan-"+e+"-"+$.b3v().k5(new A.cQ(p,0,!1))+"."+c,d,q),$async$t8)
 case 2:if(a.e!=null)A.fm(a,!1).ei()
 return A.B(null,r)}})
 return A.C($async$t8,r)},
@@ -50328,7 +50328,7 @@ o=new A.aN(999,999)
 m.push(A.mF(n,n,n,B.cz,new A.br(p,n,n,new A.cC(o,o,o,o),n,n,B.U),B.aU,8,B.Zy,n,q))}return A.c4(m,B.B,n,B.p,B.aa)}}
 A.a5e.prototype={
 J(a){var s=null
-return A.bs(A.b([B.avf,B.fq,A.pc(B.P,A.aL("Fikakassen",s,s,s,s,s,A.rv(A.Yx(a)===B.jf?56:72,B.G),s,s),B.v,B.e1),B.bl,A.aL("Kassan som alla kan sk\xf6ta. Tryck p\xe5 varorna, visa Swish-koden \u2013 klart.",s,s,s,s,s,B.aR.n_(B.at,19),B.b7,s),B.fq,A.dC(!0,B.Sa,"Kom ig\xe5ng",this.c,B.fH,B.bI),B.bl,B.aqR],t.p),B.an,B.p,B.aa)}}
+return A.bs(A.b([B.avf,B.fq,A.pc(B.P,A.aL("Fikakassan",s,s,s,s,s,A.rv(A.Yx(a)===B.jf?56:72,B.G),s,s),B.v,B.e1),B.bl,A.aL("Kassan som alla kan sk\xf6ta. Tryck p\xe5 varorna, visa Swish-koden \u2013 klart.",s,s,s,s,s,B.aR.n_(B.at,19),B.b7,s),B.fq,A.dC(!0,B.Sa,"Kom ig\xe5ng",this.c,B.fH,B.bI),B.bl,B.aqR],t.p),B.an,B.p,B.aa)}}
 A.a4V.prototype={
 J(a){var s,r,q,p,o,n,m,l,k,j=null,i=A.b([],t.p)
 for(s=A.TH(B.a5u,0,t.Jt),r=J.aC(s.a),s=s.b,q=new A.nh(r,s);q.p();){p=q.c
@@ -50548,7 +50548,7 @@ s=n.c
 if(s.length===0)s="Kassa"
 r=n.d
 r=r==null?m:r.b
-if(r==null)r="Fikakassen"
+if(r==null)r="Fikakassan"
 q=new A.bn(new A.aq(l,12,l,0),new A.a4G(s,r,new A.auU(a),m),m)
 s=n.e
 r=J.be(s)

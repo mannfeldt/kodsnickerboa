@@ -1,5 +1,5 @@
-/* Fikakassen landing page. Colours, type and radii follow the app's design
-   tokens in fikakassen/lib/app/theme.dart. No external requests. */
+/* Fikakassan landing page. Colours, type and radii follow the app's design
+   tokens in fikakassan/lib/app/theme.dart. No external requests. */
 
 @font-face { font-family: "Bricolage"; src: url("assets/fonts/BricolageGrotesque-700.woff2") format("woff2"); font-weight: 700; font-display: swap; }
 @font-face { font-family: "Bricolage"; src: url("assets/fonts/BricolageGrotesque-800.woff2") format("woff2"); font-weight: 800; font-display: swap; }

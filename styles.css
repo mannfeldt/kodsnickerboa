@@ -241,13 +241,14 @@ h1 {
 .shelf {
   --icon: clamp(56px, 7.2vw, 86px);
   --plank: 14px;
-  width: min(100%, 29rem);
+  /* Room for seven icons with a little air between them. */
+  width: min(100%, calc(7 * var(--icon) + 4.5rem));
 }
 
 .shelf__items {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(4rem, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   padding-inline: clamp(6px, 1vw, 14px);
 }
 
@@ -659,6 +660,7 @@ h3 {
 
 .piece-bench__icon {
   width: var(--icon);
+  border-radius: 22%;
 }
 
 .piece-bench h3 {
@@ -768,7 +770,7 @@ h3 {
   }
 
   .shelf {
-    --icon: clamp(48px, 15vw, 84px);
+    --icon: clamp(38px, 12.6vw, 84px);
   }
 
   .piece,
@@ -791,6 +793,12 @@ h3 {
     gap: 1rem;
   }
 
+  /* Seven labels in a phone-wide row: narrow the letters, not the words. */
+  .shelf__label {
+    font-size: 0.7rem;
+    font-stretch: 80%;
+  }
+
   .piece-bench {
     grid-template-columns: minmax(0, 1fr);
     justify-items: start;
@@ -798,6 +806,13 @@ h3 {
 
   .button {
     padding-inline: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .shelf__label {
+    font-size: 0.62rem;
+    font-stretch: 75%;
   }
 }
 
