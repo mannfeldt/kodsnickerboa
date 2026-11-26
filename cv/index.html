@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description"
+    content="CV of Emil Mannfeldt, Product Engineer and Lead Mobile Developer at Kleer Group AB. Experience, education, skills and side projects, in English and Swedish." />
+  <link rel="canonical" href="https://kodsnickerboa.com/cv/" />
+  <meta property="og:title" content="Emil Mannfeldt — CV" />
+  <meta property="og:url" content="https://kodsnickerboa.com/cv/" />
+  <meta property="og:description" content="Product Engineer and Lead Mobile Developer at Kleer Group AB." />
+  <meta property="og:type" content="profile" />
+  <title>Emil Mannfeldt — CV</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Set language and theme before the first paint. -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var stored = {};
+      try {
+        stored.lang = localStorage.getItem("cv-lang");
+        stored.theme = localStorage.getItem("cv-theme");
+      } catch (e) { }
+      var lang = new URLSearchParams(location.search).get("lang") || stored.lang || ((navigator.language || "").toLowerCase().indexOf("sv") === 0 ? "sv" : "en");
+      if (lang !== "sv") lang = "en";
+      root.lang = lang;
+      root.dataset.lang = lang;
+      if (stored.theme === "light" || stored.theme === "dark") root.dataset.theme = stored.theme;
+      root.classList.add("js");
+    })();
+  </script>
+
+</head>
+
+<body>
+  <div class="top">
+    <a class="top__home" href="/">kodsnickerboa.com</a>
+
+    <div class="controls">
+      <div class="lang" role="group" aria-label="Language / Språk">
+        <button type="button" data-set-lang="en" aria-pressed="true" title="English">EN</button>
+        <button type="button" data-set-lang="sv" aria-pressed="false" title="Svenska">SV</button>
+      </div>
+      <button type="button" class="control" id="theme-toggle" aria-label="Switch between light and dark mode">
+        <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true">
+          <circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5" />
+          <path d="M8 1.75a6.25 6.25 0 0 1 0 12.5z" fill="currentColor" />
+        </svg>
+      </button>
+      <button type="button" class="control" id="print">PDF</button>
+    </div>
+  </div>
+
+  <main class="cv">
+    <header class="head">
+      <h1>Emil Mannfeldt</h1>
+      <p class="role">
+        Product Engineer / Lead Mobile Developer
+        <span class="role__at"><span lang="en">at</span><span lang="sv">på</span> Kleer Group AB</span>
+      </p>
+    </header>
+
+    <aside class="side">
+      <section class="sec sec--contact" aria-labelledby="contact-title">
+        <h2 id="contact-title"><span lang="en">Contact</span><span lang="sv">Kontakt</span></h2>
+        <div class="sec__body">
+          <ul class="contact">
+            <li>
+              <span class="contact__label"><span lang="en">Email</span><span lang="sv">E-post</span></span>
+              <a href="mailto:hello@kodsnickerboa.com">hello@kodsnickerboa.com</a>
+            </li>
+            <li>
+              <span class="contact__label">GitHub</span>
+              <a href="https://github.com/mannfeldt" rel="noopener">github.com/mannfeldt</a>
+            </li>
+            <li>
+              <span class="contact__label">Portfolio</span>
+              <a href="/">kodsnickerboa.com</a>
+            </li>
+            <li>
+              <span class="contact__label"><span lang="en">Based in</span><span lang="sv">Bor i</span></span>
+              <span><span lang="en">Sweden</span><span lang="sv">Sverige</span></span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sec sec--skills" aria-labelledby="skills-title">
+        <h2 id="skills-title"><span lang="en">Skills</span><span lang="sv">Kompetenser</span></h2>
+        <div class="sec__body skills">
+          <div class="skills__group">
+            <h3><span lang="en">Languages and back end</span><span lang="sv">Språk och backend</span></h3>
+            <ul class="tags">
+              <li>Java</li>
+              <li>JavaScript</li>
+              <li>Dart</li>
+              <li>SQL</li>
+              <li>Node.js</li>
+            </ul>
+          </div>
+          <div class="skills__group">
+            <h3><span lang="en">Web</span><span lang="sv">Webb</span></h3>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Angular</li>
+              <li>React</li>
+              <li>Vue</li>
+            </ul>
+          </div>
+          <div class="skills__group">
+            <h3><span lang="en">Mobile, games and cloud</span><span lang="sv">Mobil, spel och moln</span></h3>
+            <ul class="tags">
+              <li>Flutter</li>
+              <li>Unity</li>
+              <li>Firebase</li>
+            </ul>
+          </div>
+          <div class="skills__group">
+            <h3><span lang="en">Tools and workflow</span><span lang="sv">Verktyg och arbetssätt</span></h3>
+            <ul class="tags">
+              <li>Claude Code</li>
+              <li>Docker</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <div class="main">
+      <section class="sec sec--profile" aria-labelledby="profile-title">
+        <h2 id="profile-title"><span lang="en">Profile</span><span lang="sv">Profil</span></h2>
+        <div class="sec__body">
+          <p class="lede" lang="en">
+            Product engineer and mobile development lead with
+            <span data-years-since="2015-09">11</span> years of professional experience. I began as a full-stack
+            Java and web developer in the public sector, building systems for government and healthcare. At Kleer,
+            I lead mobile development and focus on AI-first, agentic ways of working, developer experience, and
+            building the right products with closer user collaboration. In my spare time, I design, build, and
+            publish my own games and apps.
+          </p>
+          <p class="lede" lang="sv">
+            Produktutvecklare och ledare inom mobilutveckling med
+            <span data-years-since="2015-09">11</span> års yrkeserfarenhet. Jag började som fullstackutvecklare inom
+            Java och webb i offentlig sektor, där jag utvecklade system för myndigheter och vården. På Kleer leder
+            jag mobilutvecklingen och fokuserar på AI-först och agentbaserade arbetssätt, utvecklarupplevelse och
+            produktutveckling i nära samarbete med användarna. På fritiden designar, bygger och ger jag ut egna spel
+            och appar.
+          </p>
+        </div>
+      </section>
+
+      <section class="sec sec--experience" aria-labelledby="experience-title">
+        <h2 id="experience-title"><span lang="en">Experience</span><span lang="sv">Erfarenhet</span></h2>
+        <div class="sec__body">
+          <article class="item">
+            <p class="item__dates">
+              <span lang="en">Jan 2026 – Present</span><span lang="sv">jan. 2026 – nu</span>
+            </p>
+            <div class="item__main">
+              <h3 class="item__title"><span lang="en">Product Engineer</span><span lang="sv">Produktutvecklare</span></h3>
+              <p class="item__org">Kleer Group AB</p>
+              <p class="item__text" lang="en">
+                Continued to lead mobile development while shifting my day-to-day focus from writing code to
+                AI-first, agentic development. I build automation and development skills, improve the developer
+                experience, and take a broader product perspective to prioritize the right work in close collaboration
+                with users.
+              </p>
+              <p class="item__text" lang="sv">
+                Fortsatte att leda mobilutvecklingen, samtidigt som det dagliga arbetet skiftade från att skriva kod
+                till AI-först och agentdriven utveckling. Jag bygger automation och utvecklingsförmågor, förbättrar
+                utvecklarupplevelsen och tar ett bredare produktperspektiv för att prioritera rätt arbete i nära
+                samarbete med användarna.
+              </p>
+            </div>
+          </article>
+
+          <article class="item">
+            <p class="item__dates">
+              <span lang="en">Sep 2020 – Dec 2025</span><span lang="sv">sep. 2020 – dec. 2025</span>
+            </p>
+            <div class="item__main">
+              <h3 class="item__title"><span lang="en">Lead Mobile Developer</span><span lang="sv">Ledande mobilutvecklare</span></h3>
+              <p class="item__org">Kleer Group AB</p>
+              <p class="item__text" lang="en">
+                Took end-to-end responsibility for Kleer's mobile app, leading its design and development through
+                final release on the App Store and Google Play.
+              </p>
+              <p class="item__text" lang="sv">
+                Tog ett helhetsansvar för Kleers mobilapp och ledde arbetet från design och utveckling till lansering
+                på App Store och Google Play.
+              </p>
+            </div>
+          </article>
+
+          <article class="item">
+            <p class="item__dates">
+              <span lang="en">Sep 2019 – Aug 2020</span><span lang="sv">sep. 2019 – aug. 2020</span>
+            </p>
+            <div class="item__main">
+              <h3 class="item__title"><span lang="en">Flutter Developer</span><span lang="sv">Flutterutvecklare</span></h3>
+              <p class="item__org">Kleer Group AB</p>
+              <p class="item__text" lang="en">
+                Joined Kleer to establish an in-house mobile app team and replace the previously outsourced app with
+                a Flutter rebuild. Worked alongside specialist consultants in the early stages, gradually transferring
+                knowledge and ownership to the in-house team.
+              </p>
+              <p class="item__text" lang="sv">
+                Började på Kleer för att bygga upp ett internt mobilteam och ersätta den tidigare outsourcade appen
+                med en nyutveckling i Flutter. Arbetade tillsammans med specialistkonsulter i projektets tidiga skede
+                och överförde successivt kunskap och ansvar till det interna teamet.
+              </p>
+            </div>
+          </article>
+
+          <article class="item">
+            <p class="item__dates">
+              <span lang="en">Nov 2017 – Sep 2019</span><span lang="sv">nov. 2017 – sep. 2019</span>
+            </p>
+            <div class="item__main">
+              <h3 class="item__title">
+                <span lang="en">Full Stack Developer</span><span lang="sv">Fullstackutvecklare</span>
+              </h3>
+              <p class="item__org">
+                Region Sörmland IT
+                <span class="item__note">
+                  <span lang="en">(formerly D-data AB)</span><span lang="sv">(tidigare D-data AB)</span>
+                </span>
+              </p>
+              <p class="item__text" lang="en">
+                Full-time consultant on R7e-arkiv, a joint initiative between several Swedish regions. I was part
+                of a small, distributed team that developed and maintained several products for the healthcare and
+                government sector. The work was mostly project-based, and I was usually involved from the first
+                requirements to the final delivery.
+              </p>
+              <p class="item__text" lang="sv">
+                Konsult på heltid i R7e-arkiv, ett samarbete mellan flera svenska regioner. Jag ingick i ett litet,
+                distribuerat team som utvecklade och förvaltade flera produkter för vården och offentlig sektor.
+                Arbetet var till största delen projektbaserat, och jag var oftast med från de första kraven till
+                färdig leverans.
+              </p>
+              <ul class="tags">
+                <li>Java</li>
+                <li>JavaScript</li>
+                <li>jQuery</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>SQL</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="item">
+            <p class="item__dates">
+              <span lang="en">May 2016 – Nov 2017</span><span lang="sv">maj 2016 – nov. 2017</span>
+            </p>
+            <div class="item__main">
+              <h3 class="item__title">
+                <span lang="en">Full Stack Developer</span><span lang="sv">Fullstackutvecklare</span>
+              </h3>
+              <p class="item__org">
+                <span lang="en">Swedish Board of Agriculture</span><span lang="sv">Jordbruksverket</span>
+              </p>
+              <p class="item__text" lang="en">
+                Member of an agile team responsible for developing and maintaining several internal and
+                public-facing web applications. I worked across the full stack, from design to implementation.
+              </p>
+              <p class="item__text" lang="sv">
+                Medlem i ett agilt team med ansvar för utveckling och förvaltning av flera interna och externa
+                webbapplikationer. Jag arbetade med hela stacken, från design till implementation.
+              </p>
+              <ul class="tags">
+                <li>Java</li>
+                <li>JavaScript</li>
+                <li>Angular</li>
+                <li>JSP</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>SQL</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="item">
+            <p class="item__dates">
+              <span lang="en">Sep 2015 – May 2016</span><span lang="sv">sep. 2015 – maj 2016</span>
+            </p>
+            <div class="item__main">
+              <h3 class="item__title">Trainee</h3>
+              <p class="item__org">
+                <span lang="en">Swedish Board of Agriculture</span><span lang="sv">Jordbruksverket</span>
+              </p>
+              <p class="item__text" lang="en">
+                Accepted to the IT department's trainee programme for recent graduates, with a focus on Java and
+                web development.
+              </p>
+              <p class="item__text" lang="sv">
+                Antagen till IT-avdelningens traineeprogram för nyutexaminerade, med inriktning på Java och
+                webbutveckling.
+              </p>
+              <ul class="tags">
+                <li>Java</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="item">
+            <p class="item__dates">
+              <span lang="en">Apr 2014 – Jul 2015</span><span lang="sv">apr. 2014 – juli 2015</span>
+            </p>
+            <div class="item__main">
+              <h3 class="item__title">
+                <span lang="en">Consultant, part-time</span><span lang="sv">Konsult, deltid</span>
+              </h3>
+              <p class="item__org">StudentConsulting AB</p>
+              <p class="item__text" lang="en">
+                Part-time assignments for a range of client companies alongside my university studies. Not
+                IT-related.
+              </p>
+              <p class="item__text" lang="sv">
+                Deltidsuppdrag hos olika kundföretag vid sidan av universitetsstudierna. Inte IT-relaterat.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="sec sec--education" aria-labelledby="education-title">
+        <h2 id="education-title"><span lang="en">Education</span><span lang="sv">Utbildning</span></h2>
+        <div class="sec__body">
+          <article class="item">
+            <p class="item__dates">2012 – 2015</p>
+            <div class="item__main">
+              <h3 class="item__title">
+                <span lang="en">Bachelor's degree, Systems Science</span>
+                <span lang="sv">Kandidatexamen, systemvetenskap</span>
+              </h3>
+              <p class="item__org">
+                <span lang="en">Linköping University</span><span lang="sv">Linköpings universitet</span>
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="sec sec--projects" aria-labelledby="projects-title">
+        <h2 id="projects-title"><span lang="en">Side projects</span><span lang="sv">Egna projekt</span></h2>
+        <div class="sec__body">
+          <article class="item">
+            <p class="item__dates"><span lang="en">Ongoing</span><span lang="sv">Pågående</span></p>
+            <div class="item__main">
+              <h3 class="item__title">Kodsnickerboa</h3>
+              <p class="item__org">
+                <span lang="en">Games, mobile and web development on my own</span>
+                <span lang="sv">Spel-, mobil- och webbutveckling på egen hand</span>
+              </p>
+              <p class="item__text" lang="en">
+                I design, build and publish my own games and apps: the puzzle games
+                <a href="/#patchlands">Patchlands</a> and <a href="/#patchwise">Patchwise</a>, both on the App
+                Store and Google Play, and <a href="/#slotcars">Slotcars</a>, a racing game on real city streets
+                that runs in the browser. Earlier projects in Unity and on the web are on
+                <a href="https://github.com/mannfeldt" rel="noopener">GitHub</a>.
+              </p>
+              <p class="item__text" lang="sv">
+                Jag designar, bygger och ger ut egna spel och appar: pusselspelen
+                <a href="/#patchlands">Patchlands</a> och <a href="/#patchwise">Patchwise</a>, som båda finns på
+                App Store och Google Play, och <a href="/#slotcars">Slotcars</a>, ett racingspel på riktiga
+                stadsgator som körs i webbläsaren. Tidigare projekt i Unity och för webben finns på
+                <a href="https://github.com/mannfeldt" rel="noopener">GitHub</a>.
+              </p>
+              <ul class="tags">
+                <li>Flutter</li>
+                <li>Firebase</li>
+                <li>Unity</li>
+                <li>JavaScript</li>
+                <li>Node.js</li>
+                <li>React</li>
+                <li>Vue</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <span>© <span id="current-year">2026</span> Emil Mannfeldt</span>
+    <span>kodsnickerboa.com/cv</span>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>

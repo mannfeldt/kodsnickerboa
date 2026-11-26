@@ -247,7 +247,7 @@ h1 {
 .shelf__items {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(4rem, 1fr);
   padding-inline: clamp(6px, 1vw, 14px);
 }
 
@@ -653,6 +653,14 @@ h3 {
   rotate: -5deg;
 }
 
+.piece-bench + .piece-bench {
+  margin-top: clamp(1rem, 2vw, 1.5rem);
+}
+
+.piece-bench__icon {
+  width: var(--icon);
+}
+
 .piece-bench h3 {
   font-size: clamp(2.1rem, 4.2vw, 3.3rem);
 }
@@ -760,8 +768,7 @@ h3 {
   }
 
   .shelf {
-    --icon: clamp(56px, 16vw, 84px);
-    width: min(100%, 26rem);
+    --icon: clamp(48px, 15vw, 84px);
   }
 
   .piece,

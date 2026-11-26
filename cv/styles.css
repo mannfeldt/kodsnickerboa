@@ -1,0 +1,426 @@
+/* Shared resets, language visibility and theme handling for the CV. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Both languages are in the markup; the one that is not chosen is hidden. */
+html[data-lang="en"] [lang="sv"],
+html[data-lang="sv"] [lang="en"] {
+  display: none !important;
+}
+
+/* Colours are written as light-dark(light, dark). The toggle pins one of the two. */
+:root {
+  color-scheme: light dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  padding: 0;
+  color: inherit;
+  border: 0;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.control svg {
+  display: block;
+}
+
+/* Without JavaScript the controls do nothing, so they are not shown. */
+html:not(.js) .controls {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@media print {
+  @page {
+    margin: 14mm 15mm;
+  }
+
+  :root,
+  :root[data-theme] {
+    color-scheme: light;
+  }
+
+  .top,
+  .item {
+    break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+}
+/* Plain one-column CV layout with restrained typography and hairline dividers. */
+
+:root {
+  --bg: light-dark(#ffffff, #121212);
+  --fg: light-dark(#111111, #ededed);
+  --muted: light-dark(#5c6066, #a3a3a3);
+  --line: light-dark(#e2e2e2, #2e2e2e);
+  --width: 44rem;
+  --gutter: clamp(20px, 5vw, 40px);
+}
+
+body {
+  color: var(--fg);
+  background: var(--bg);
+  font-family: Inter, "Helvetica Neue", Arial, system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Top ---------- */
+
+.top,
+.cv,
+.foot {
+  width: min(100% - 2 * var(--gutter), var(--width));
+  margin-inline: auto;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1.25rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.top__home {
+  text-decoration: none;
+}
+
+.top__home:hover,
+.control:hover,
+.lang button:hover {
+  color: var(--fg);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.lang {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.lang button,
+.control {
+  padding: 0.3rem 0;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.lang button[aria-pressed="true"] {
+  color: var(--fg);
+  font-weight: 700;
+}
+
+/* ---------- Page ---------- */
+
+.cv {
+  display: flex;
+  flex-direction: column;
+  padding-block: clamp(2rem, 6vw, 4rem) clamp(3rem, 7vw, 5rem);
+}
+
+/* One column: the wrappers step aside and the sections are ordered directly. */
+.side,
+.main {
+  display: contents;
+}
+
+.head { order: 1; }
+.sec--contact { order: 2; }
+.sec--profile { order: 3; }
+.sec--experience { order: 4; }
+.sec--education { order: 5; }
+.sec--projects { order: 6; }
+.sec--skills { order: 7; }
+
+h1 {
+  font-size: clamp(2.1rem, 6vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.role {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+/* ---------- Contact: one quiet line under the name ---------- */
+
+.sec--contact {
+  margin-top: 1.1rem;
+}
+
+.sec--contact h2,
+.contact__label {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.4rem;
+  font-size: 0.92rem;
+}
+
+a {
+  text-decoration-color: var(--line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+}
+
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+/* ---------- Sections ---------- */
+
+.sec:not(.sec--contact) {
+  margin-top: clamp(2.25rem, 5vw, 3rem);
+}
+
+.sec:not(.sec--contact) h2 {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.6rem;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.lede {
+  text-wrap: pretty;
+}
+
+/* Title on the left, dates on the right, then the text across the full width. */
+.item {
+  display: grid;
+  align-items: baseline;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 1.5rem;
+}
+
+.item + .item {
+  margin-top: 1.75rem;
+}
+
+.item__main {
+  display: contents;
+}
+
+.item__title {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 1.04rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.item__dates {
+  grid-column: 2;
+  grid-row: 1;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.item__org,
+.item__text,
+.item .tags {
+  grid-column: 1 / -1;
+}
+
+.item__org {
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.item__text {
+  margin-top: 0.55rem;
+  text-wrap: pretty;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tags li:not(:last-child)::after {
+  margin-inline: 0.5em;
+  content: "·";
+  color: var(--muted);
+}
+
+.item .tags {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+/* ---------- Skills ---------- */
+
+.skills__group {
+  display: grid;
+  align-items: baseline;
+  grid-template-columns: 12.5rem minmax(0, 1fr);
+  gap: 0.1rem 1.5rem;
+}
+
+.skills__group + .skills__group {
+  margin-top: 0.6rem;
+}
+
+.skills h3 {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 400;
+}
+
+.skills .tags {
+  font-size: 0.96rem;
+}
+
+/* ---------- Footer ---------- */
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.4rem 1.5rem;
+  flex-wrap: wrap;
+  padding-block: 1.1rem 2rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 560px) {
+  .item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .item__dates {
+    grid-column: 1;
+    grid-row: auto;
+    order: -1;
+    font-size: 0.82rem;
+  }
+
+  .item__title {
+    grid-row: auto;
+  }
+
+  .skills__group {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media print {
+  body {
+    font-size: 10pt;
+    line-height: 1.45;
+  }
+
+  .cv,
+  .foot {
+    width: 100%;
+  }
+
+  .cv {
+    padding-block: 0 1.5rem;
+  }
+
+  h1 {
+    font-size: 24pt;
+  }
+
+  .sec:not(.sec--contact) {
+    margin-top: 1.4rem;
+  }
+
+  .sec:not(.sec--contact) h2 {
+    margin-bottom: 0.8rem;
+  }
+
+  .item + .item {
+    margin-top: 1rem;
+  }
+}

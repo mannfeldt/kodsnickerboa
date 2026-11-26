@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <base href="/fikakassen/app/">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Fikakassen – enkel kassa med Swish-QR för föreningar och småföretag.">
+  <meta name="theme-color" content="#F4F1EA">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Fikakassen">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Fikakassen</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    @font-face {
+      font-family: 'Bricolage';
+      font-weight: 800;
+      src: url('assets/assets/fonts/BricolageGrotesque-800.ttf') format('truetype');
+    }
+    html, body { height: 100%; margin: 0; background: #F4F1EA; }
+    /* Shown while the app loads; removed on Flutter's first frame. */
+    #splash {
+      position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+      font: 800 44px/1 'Bricolage', system-ui, sans-serif; letter-spacing: -1.5px; color: #16150F;
+      transition: opacity .25s ease;
+    }
+  </style>
+</head>
+<body>
+  <div id="splash">Fikakassen</div>
+  <script src="flutter_bootstrap.js" async></script>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var splash = document.getElementById('splash');
+      if (!splash) return;
+      splash.style.opacity = '0';
+      setTimeout(function () { splash.remove(); }, 300);
+    });
+  </script>
+  <script>
+    // Ask the browser not to clear the till's data when storage runs low.
+    if (navigator.storage && navigator.storage.persist) {
+      navigator.storage.persist();
+    }
+    // Caches the whole app on first visit so it keeps working offline.
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('offline_worker.js');
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fikakassen – kassan som alla kan sköta</title>
+<meta name="description" content="Fikakassen är en gratis kassa för kiosken, fikabordet och julmarknaden. Tryck på varorna, visa summan och en Swish-kod, ta nästa kund. Inget konto, och den fungerar utan internet.">
+<link rel="canonical" href="https://kodsnickerboa.com/fikakassen/">
+<meta name="theme-color" content="#F4F1EA">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:site_name" content="Fikakassen">
+<meta property="og:url" content="https://kodsnickerboa.com/fikakassen/">
+<meta property="og:title" content="Fikakassen – kassan som alla kan sköta">
+<meta property="og:description" content="Gratis kassa med Swish-kod för kiosken, fikabordet och julmarknaden. Så enkel att barnen kan stå i kassan.">
+<meta property="og:image" content="https://kodsnickerboa.com/fikakassen/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/BricolageGrotesque-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Figtree-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 256 256"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Hoppa till innehållet</a>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="#main" aria-label="Fikakassen, till början av sidan">
+      <img src="assets/apple-touch-icon.png" alt="" width="36" height="36">
+      <span>Fikakassen</span>
+    </a>
+    <nav class="nav" aria-label="Sidans delar">
+      <a href="#sa-funkar-det">Så funkar det</a>
+      <a href="#listor">Listor</a>
+      <a href="#offline">Offline</a>
+      <a href="#fragor">Frågor</a>
+    </nav>
+    <a class="button button--small" href="app/">Öppna kassan <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Kassa för kiosk, fikabord och loppis</p>
+      <h1>Kassan som <span class="marker">alla</span> kan sköta.</h1>
+      <p class="lede">Tryck på det kunden vill ha, visa summan och Swish-koden – klart. Fikakassen är så enkel att den yngsta i laget kan stå i kiosken, och den fungerar även när täckningen inte gör det.</p>
+      <div class="actions">
+        <a class="button button--large" href="app/">Öppna Fikakassen <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="link" href="#sa-funkar-det">Så funkar det <svg class="down" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+      <ul class="facts">
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Gratis</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Inget konto</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Fungerar offline</li>
+      </ul>
+    </div>
+
+    <div class="hero-stage">
+      <figure class="device device--tablet">
+        <div class="device-body"><img src="assets/screens/till-tablet.webp" width="1600" height="1112" fetchpriority="high" alt="Kassan på en surfplatta: tolv varor med bild och pris, och en beställning på 90 kronor."></div>
+      </figure>
+      <figure class="device device--phone">
+        <div class="device-body"><img src="assets/screens/pay-phone.webp" width="640" height="1385" alt="Betalskärmen på en mobil: 90 kronor att betala och en Swish-kod att skanna."></div>
+      </figure>
+      <div class="float-tile float-tile--a" aria-hidden="true">
+        <span class="pic" style="--icon: url(assets/emoji/hot_beverage.svg)"></span><b>Kaffe</b><small>15 kr</small>
+      </div>
+      <div class="float-tile float-tile--b is-picked" aria-hidden="true">
+        <span class="count">2</span>
+        <span class="pic" style="--icon: url(assets/emoji/pretzel.svg)"></span><b>Kanelbulle</b><small>20 kr</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <ul class="ticker-list">
+      <li><span class="pic" style="--icon: url(assets/emoji/hot_beverage.svg)"></span>Kaffe <b>15 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/pretzel.svg)"></span>Kanelbulle <b>20 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/hot_dog.svg)"></span>Korv med bröd <b>25 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/tropical_drink.svg)"></span>Saft <b>10 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/cookie.svg)"></span>Chokladboll <b>15 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/cupcake.svg)"></span>Muffin <b>20 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/shortcake.svg)"></span>Kladdkaka <b>25 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/cup_with_straw.svg)"></span>Läsk <b>20 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/popcorn.svg)"></span>Popcorn <b>15 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/four_leaf_clover.svg)"></span>Lott <b>10 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/ice_cream.svg)"></span>Glass <b>20 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/candy.svg)"></span>Godispåse <b>20 kr</b></li>
+    </ul>
+    <ul class="ticker-list">
+      <li><span class="pic" style="--icon: url(assets/emoji/hot_beverage.svg)"></span>Kaffe <b>15 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/pretzel.svg)"></span>Kanelbulle <b>20 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/hot_dog.svg)"></span>Korv med bröd <b>25 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/tropical_drink.svg)"></span>Saft <b>10 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/cookie.svg)"></span>Chokladboll <b>15 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/cupcake.svg)"></span>Muffin <b>20 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/shortcake.svg)"></span>Kladdkaka <b>25 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/cup_with_straw.svg)"></span>Läsk <b>20 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/popcorn.svg)"></span>Popcorn <b>15 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/four_leaf_clover.svg)"></span>Lott <b>10 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/ice_cream.svg)"></span>Glass <b>20 kr</b></li>
+      <li><span class="pic" style="--icon: url(assets/emoji/candy.svg)"></span>Godispåse <b>20 kr</b></li>
+    </ul>
+  </div>
+</div>
+
+<section class="section" id="sa-funkar-det">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Så funkar det</p>
+      <h2>Tryck, visa, <em>nästa kund.</em></h2>
+      <p>Den som står i kassan behöver inte räkna, skriva eller komma ihåg några priser. Kassan visar hela tiden vad som är nästa steg.</p>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <div class="step-plate">
+          <figure class="device device--phone"><div class="device-body"><img src="assets/screens/till-phone.webp" width="640" height="1385" loading="lazy" alt="Kassan på en mobil med varor som stora knappar. Korv med bröd, Läsk och Kanelbulle är valda."></div></figure>
+        </div>
+        <div class="step-text">
+          <span class="step-no">1</span>
+          <h3>Tryck på det kunden vill ha</h3>
+          <p>Varorna ligger som stora knappar med bild och pris. Ett tryck till blir en till, och minus tar bort. Summan räknas ut medan du trycker.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-plate step-plate--butter">
+          <figure class="device device--phone"><div class="device-body"><img src="assets/screens/pay-phone.webp" width="640" height="1385" loading="lazy" alt="Betalskärmen: 90 kronor att betala och en Swish-kod med beloppet ifyllt."></div></figure>
+        </div>
+        <div class="step-text">
+          <span class="step-no">2</span>
+          <h3>Vänd skärmen mot kunden</h3>
+          <p>Betalskärmen visar summan och en Swish-kod där beloppet redan är ifyllt. Kunden skannar med Swish och godkänner – ingen behöver knappa in något.</p>
+        </div>
+      </li>
+      <li class="step">
+        <div class="step-plate step-plate--deep">
+          <figure class="device device--phone"><div class="device-body"><img src="assets/screens/history-phone.webp" width="640" height="1385" loading="lazy" alt="Historiken: 575 kronor sålt i dag, fördelat på tio köp, med de mest sålda varorna."></div></figure>
+        </div>
+        <div class="step-text">
+          <span class="step-no">3</span>
+          <h3>Betalt – nästa kund</h3>
+          <p>När kundens Swish visar att betalningen gått igenom trycker du Betalt. Köpet sparas i historiken och kassan är redo för nästa.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section--card" id="for-barn">
+  <div class="wrap split">
+    <div class="kids-art" aria-hidden="true">
+      <div class="mini-till">
+        <div class="mini-grid">
+          <div class="mt"><span class="pic" style="--icon: url(assets/emoji/hot_dog.svg)"></span><b>Korv</b><small>25 kr</small></div>
+          <div class="mt"><span class="pic" style="--icon: url(assets/emoji/hot_beverage.svg)"></span><b>Kaffe</b><small>15 kr</small></div>
+          <div class="mt is-picked"><span class="mt-minus"></span><span class="count">2</span><span class="pic" style="--icon: url(assets/emoji/pretzel.svg)"></span><b>Kanelbulle</b><small>20 kr</small></div>
+          <div class="mt"><span class="pic" style="--icon: url(assets/emoji/tropical_drink.svg)"></span><b>Saft</b><small>10 kr</small></div>
+          <div class="mt is-picked"><span class="mt-minus"></span><span class="count">1</span><span class="pic" style="--icon: url(assets/emoji/cookie.svg)"></span><b>Chokladboll</b><small>15 kr</small></div>
+          <div class="mt"><span class="pic" style="--icon: url(assets/emoji/cupcake.svg)"></span><b>Muffin</b><small>20 kr</small></div>
+        </div>
+        <div class="mini-bar">
+          <div><small>3 varor</small><strong>55 kr</strong></div>
+          <span class="mini-pay"><span class="pic" style="--icon: url(assets/icons/qr-code.svg)"></span>Betala</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow">Gjord för barn i kassan</p>
+      <h2>Stora bilder. <em>Ingen huvudräkning.</em></h2>
+      <p class="body">När laget säljer korv på hemmamatchen är det ofta barnen som står i kiosken. Fikakassen är byggd för dem: allt som behövs syns på skärmen och det finns alltid ett tydligt nästa steg.</p>
+      <ul class="checklist">
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Bild och pris på stora knappar</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Summan räknas ut automatiskt</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Inget att skriva in i kassan</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Priser och inställningar låsta bakom en kod</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="listor">
+  <div class="wrap">
+    <div class="section-head section-head--center">
+      <p class="eyebrow">Inte bara fika</p>
+      <h2>Från hemmamatch <em>till julmarknad.</em></h2>
+      <p>Börja med en färdig lista för fika eller kiosk och ändra priserna, eller bygg en egen. Gör en lista per tillfälle och välj vilken kassan ska använda.</p>
+    </div>
+    <ul class="list-pills" aria-label="Exempel på listor">
+      <li class="is-active">Hemmamatch <span>I kassan</span></li>
+      <li>Cupen</li>
+      <li>Julmarknad</li>
+      <li>Loppis</li>
+      <li>Skolavslutning</li>
+    </ul>
+    <ul class="icon-wall" aria-label="Exempel på bilder i Fikakassen">
+      <li><span class="pic" style="--icon: url(assets/emoji/waffle.svg)"></span>Våffla</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/four_leaf_clover.svg)"></span>Lott</li>
+      <li class="is-picked"><span class="pic" style="--icon: url(assets/emoji/christmas_tree.svg)"></span>Julgran</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/admission_tickets.svg)"></span>Entré</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/recycling_symbol.svg)"></span>Pant</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/fishing_pole.svg)"></span>Fiskdamm</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/tulip.svg)"></span>Tulpan</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/soccer_ball.svg)"></span>Fotboll</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/hamburger.svg)"></span>Hamburgare</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/socks.svg)"></span>Strumpor</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/strawberry.svg)"></span>Jordgubbar</li>
+      <li class="is-picked"><span class="pic" style="--icon: url(assets/emoji/ice_hockey.svg)"></span>Ishockey</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/candle.svg)"></span>Ljus</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/teddy_bear.svg)"></span>Gosedjur</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/money_bag.svg)"></span>Insamling</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/french_fries.svg)"></span>Pommes</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/croissant.svg)"></span>Croissant</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/billed_cap.svg)"></span>Keps</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/books.svg)"></span>Böcker</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/lollipop.svg)"></span>Klubba</li>
+      <li class="is-picked"><span class="pic" style="--icon: url(assets/emoji/sunflower.svg)"></span>Solros</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/game_die.svg)"></span>Tärning</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/trophy.svg)"></span>Pokal</li>
+      <li><span class="pic" style="--icon: url(assets/emoji/watermelon.svg)"></span>Melon</li>
+    </ul>
+    <p class="wall-note"><span class="pic" style="--icon: url(assets/icons/magnifying-glass.svg)"></span>Över 200 bilder att välja bland. Sök på ”korv”, ”lott” eller ”pant”.</p>
+  </div>
+</section>
+
+<section class="section section--card" id="historik">
+  <div class="wrap">
+    <div class="split split--admin">
+      <div>
+        <p class="eyebrow">När kiosken stänger</p>
+        <h2>Full koll på <em>kassan.</em></h2>
+        <p class="body">Lås upp med koden och se dagens försäljning, vad som gick åt och varje enskilt köp. Kassören får siffrorna som en fil.</p>
+      </div>
+      <figure class="device device--tablet">
+        <div class="device-body"><img src="assets/screens/history-tablet.webp" width="1600" height="1112" loading="lazy" alt="Historiken på en surfplatta: försäljning i dag 575 kronor, tio köp, och sålda varor med antal och summa."></div>
+      </figure>
+    </div>
+    <ul class="features">
+        <li>
+          <span class="feature-icon"><span class="pic" style="--icon: url(assets/icons/chart-bar.svg)"></span></span>
+          <div><h3>Historik</h3><p>I dag, senaste sju dagarna eller allt. Swish och kontant räknas var för sig.</p></div>
+        </li>
+        <li>
+          <span class="feature-icon"><span class="pic" style="--icon: url(assets/icons/file-csv.svg)"></span></span>
+          <div><h3>Till kalkylark</h3><p>Sammanställning per vara eller alla köp, för Excel, Numbers och Google Kalkylark.</p></div>
+        </li>
+        <li>
+          <span class="feature-icon"><span class="pic" style="--icon: url(assets/icons/money.svg)"></span></span>
+          <div><h3>Kontant också</h3><p>Kontant finns som eget betalsätt och går att stänga av om ni bara tar Swish.</p></div>
+        </li>
+        <li>
+          <span class="feature-icon"><span class="pic" style="--icon: url(assets/icons/lock.svg)"></span></span>
+          <div><h3>Låst med kod</h3><p>Fyra siffror skyddar varor, priser och historik. Den som säljer behöver inte kunna koden.</p></div>
+        </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--dark" id="offline">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Offline och privat</p>
+      <h2>Ingen täckning i ishallen? <em>Kassan funkar ändå.</em></h2>
+      <p>Öppna Fikakassen en gång med internet, så sparas hela kassan i webbläsaren. Sedan startar den direkt och fungerar utan uppkoppling – det är bara kundens telefon som behöver täckning för att swisha.</p>
+    </div>
+    <ul class="cards">
+      <li>
+        <span class="feature-icon"><span class="pic" style="--icon: url(assets/icons/storefront.svg)"></span></span>
+        <h3>Inget konto</h3>
+        <p>Ingen registrering, ingen inloggning och inga lösenord att dela i laget. Öppna och sälj.</p>
+      </li>
+      <li>
+        <span class="feature-icon"><span class="pic" style="--icon: url(assets/icons/database.svg)"></span></span>
+        <h3>Stannar på enheten</h3>
+        <p>Listor och försäljning sparas bara där ni säljer. Ingen server och ingen spårning – inte ens vi kan se något.</p>
+      </li>
+      <li>
+        <span class="feature-icon"><span class="pic" style="--icon: url(assets/icons/money.svg)"></span></span>
+        <h3>Pengarna går direkt till er</h3>
+        <p>Fikakassen tar aldrig emot några betalningar. Kunden swishar direkt till ert nummer.</p>
+      </li>
+    </ul>
+    <p class="note"><strong>Tips:</strong> Lägg Fikakassen på hemskärmen så öppnas den som en vanlig app. Försäljningen finns bara i webbläsaren, så exportera en säkerhetskopia efter varje tillfälle.</p>
+  </div>
+</section>
+
+<section class="section" id="fragor">
+  <div class="wrap faq-grid">
+    <div class="section-head">
+      <p class="eyebrow">Vanliga frågor</p>
+      <h2>Bra att <em>veta.</em></h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Vad kostar det?<span class="toggle" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></summary>
+        <p>Ingenting. Fikakassen är gratis att använda, utan reklam och utan konto.</p>
+      </details>
+      <details>
+        <summary>Behöver vi ladda ner en app?<span class="toggle" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></summary>
+        <p>Nej, Fikakassen körs i webbläsaren på mobil, surfplatta och dator. Vill ni att den ska kännas som en app kan ni lägga den på hemskärmen: i Safari via Dela och Lägg till på hemskärmen, i Chrome via menyn och Lägg till på startskärmen.</p>
+      </details>
+      <details>
+        <summary>Hur vet jag att kunden har betalat?<span class="toggle" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></summary>
+        <p>Fikakassen är inte kopplad till Swish och ser inga betalningar. Titta på kundens telefon: när Swish visar att betalningen är klar trycker du Betalt.</p>
+      </details>
+      <details>
+        <summary>Vilket Swish-nummer kan vi använda?<span class="toggle" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></summary>
+        <p>Ett 123-nummer, som föreningar och företag har, eller ett vanligt mobilnummer. Numret går att lämna tomt när ni börjar och fylla i senare under Inställningar.</p>
+      </details>
+      <details>
+        <summary>Fungerar det utan internet?<span class="toggle" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></summary>
+        <p>Ja, efter första besöket. Kassan, historiken och exporten fungerar helt utan uppkoppling. Kunden behöver däremot täckning i sin egen telefon för att kunna swisha.</p>
+      </details>
+      <details>
+        <summary>Var sparas försäljningen?<span class="toggle" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></summary>
+        <p>Bara på enheten ni säljer på, i webbläsaren. Ingen annan kan se den – inte heller vi. Rensar man webbläsarens data försvinner den, så exportera till kalkylark eller spara en säkerhetskopia om ni vill ha kvar den.</p>
+      </details>
+      <details>
+        <summary>Kan flera telefoner dela samma kassa?<span class="toggle" aria-hidden="true"><svg><use href="#i-plus"/></svg></span></summary>
+        <p>Nej, varje enhet har sin egen kassa och historik. Säljer ni på flera ställen samtidigt kan ni exportera från varje enhet och lägga ihop filerna i ett kalkylark.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="cta-card">
+      <div class="cta-tile cta-tile--a" aria-hidden="true"><span class="pic" style="--icon: url(assets/emoji/hot_dog.svg)"></span></div>
+      <div class="cta-tile cta-tile--b" aria-hidden="true"><span class="pic" style="--icon: url(assets/emoji/hot_beverage.svg)"></span></div>
+      <div class="cta-tile cta-tile--c" aria-hidden="true"><span class="pic" style="--icon: url(assets/emoji/ice_cream.svg)"></span></div>
+      <div class="cta-tile cta-tile--d" aria-hidden="true"><span class="pic" style="--icon: url(assets/emoji/pretzel.svg)"></span></div>
+      <h2>Kiosken öppnar snart? <em>Det hinner ni.</em></h2>
+      <p>Namn, Swish-nummer, en kod och en färdig lista – sedan är kassan igång.</p>
+      <a class="button button--butter button--large" href="app/">Öppna Fikakassen <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <a class="brand" href="#main" aria-label="Fikakassen, till början av sidan">
+      <img src="assets/apple-touch-icon.png" alt="" width="36" height="36" loading="lazy">
+      <span>Fikakassen</span>
+    </a>
+    <p>En liten kassa från <a href="/">Kodsnickerboa</a>.</p>
+  </div>
+  <div class="wrap footer-fine">
+    <p>Swish är ett registrerat varumärke som tillhör Getswish AB. Fikakassen är inte kopplad till Getswish AB.</p>
+    <p>Bilder: <a href="https://github.com/microsoft/fluentui-emoji">Fluent Emoji</a> av Microsoft (<a href="assets/licenses/LICENSE-fluentui-emoji.txt">MIT</a>). Ikoner: <a href="https://phosphoricons.com">Phosphor</a> (<a href="assets/licenses/LICENSE-phosphor.txt">MIT</a>). Typsnitt: Bricolage Grotesque (<a href="assets/fonts/OFL-Bricolage.txt">OFL</a>) och Figtree (<a href="assets/fonts/OFL-Figtree.txt">OFL</a>).</p>
+  </div>
+</footer>
+</body>
+</html>
