@@ -205,6 +205,11 @@ the shelf in the header (`<nav class="shelf">`).
 - my friend from sits under "On the workbench" and is shown on the shelf as an
   uncut block of wood (`.wood-block`). When it has an icon and screenshots,
   move it up as a normal `piece`.
+- Nutrimons sits under "On the workbench" as an early build and is shown on
+  the shelf as an uncut block of wood (`.wood-block`).
+- The shelf is sized for six icons (`.shelf` width and `grid-template-columns`
+  in `styles.css`). A seventh needs both changed, and a check at 320 px wide,
+  where the labels are condensed to fit.
 
 The screenshots and icons in `assets/images/` are resized copies of each
 project's store artwork. `assets/images/og.png` is the link preview image, a
