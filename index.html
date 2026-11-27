@@ -93,7 +93,7 @@
               </li>
               <li style="--i: 6">
                 <a class="shelf__item" href="#nutrimons">
-                  <span class="wood-block" aria-hidden="true"></span>
+                  <img src="assets/images/nutrimons-icon.webp" alt="" width="256" height="256" />
                   <span class="shelf__label">Nutrimons</span>
                 </a>
               </li>
@@ -248,17 +248,44 @@
           </div>
         </article>
 
-        <article class="piece-bench" id="nutrimons" aria-labelledby="nutrimons-title">
-          <span class="wood-block wood-block--large" aria-hidden="true"></span>
+        <article class="piece-bench piece-bench--nutrimons" id="nutrimons" aria-labelledby="nutrimons-title">
+          <img class="piece-bench__icon" src="assets/images/nutrimons-icon.webp" alt="Nutrimons app icon" width="1024"
+            height="1024" loading="lazy" />
           <div>
-            <p class="status status--bench">Early build</p>
+            <p class="status status--bench">Work in progress</p>
             <h3 id="nutrimons-title">Nutrimons</h3>
             <p class="piece__lead">A monster-collecting game that starts in the grocery aisle.</p>
             <p class="piece__text">
-              Scan a food barcode to hatch a monster shaped by the product nutrients. Build a dex, raise a team and
-              challenge a friend to a duel.
+              Scan a food barcode to discover a monster shaped by its nutrients. Catch it for your collection, battle
+              wild finds in augmented reality, and challenge a friend with a team QR code.
             </p>
           </div>
+          <div class="nutrimons-gallery" aria-label="Screenshots from Nutrimons">
+            <figure>
+              <img src="assets/images/nutrimons-dex.webp" alt="The Nutrimons collection, with caught monsters and silhouettes for undiscovered entries."
+                width="1080" height="1920" loading="lazy" />
+              <figcaption>Build your dex</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/nutrimons-scan.webp" alt="A pixel monster appears over a food package after its barcode is scanned."
+                width="1080" height="1920" loading="lazy" />
+              <figcaption>Scan a grocery</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/nutrimons-ar-catch.webp" alt="A monster anchored over a package in the AR tug-of-war catch mode."
+                width="1080" height="1920" loading="lazy" />
+              <figcaption>Catch it in AR</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/images/nutrimons-ar-battle.webp" alt="Two pixel monsters battle over a real grocery package in the camera view."
+                width="1080" height="1920" loading="lazy" />
+              <figcaption>Fight in AR</figcaption>
+            </figure>
+          </div>
+          <dl class="facts">
+            <dt>Built with</dt>
+            <dd>Flutter, Firebase, Google ML Kit for Android barcode scanning, Apple Vision on iOS, the Open Food Facts API, and native AR with ARCore and ARKit.</dd>
+          </dl>
         </article>
 
         <article class="piece-bench" id="widasmattekasse" aria-labelledby="widasmattekasse-title">

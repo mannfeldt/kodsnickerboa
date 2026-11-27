@@ -44,6 +44,7 @@
             <li><a href="#widasmattekasse">Widas Mattekasse</a></li>
             <li><a href="#slotcars">Slotcars</a></li>
             <li><a href="#patchlands-patchwise">Patchlands &amp; Patchwise</a></li>
+            <li><a href="#nutrimons">Nutrimons</a></li>
             <li><a href="#more-projects">More projects</a></li>
           </ul>
         </nav>
@@ -179,6 +180,56 @@
       </div>
     </article>
 
+    <article class="case" id="nutrimons" aria-labelledby="nutrimons-title">
+      <header class="case-head">
+        <div class="case-app">
+          <img class="case-app__icon" src="/assets/images/nutrimons-icon.webp" alt="Nutrimons app icon" width="1024"
+            height="1024" loading="lazy">
+          <div>
+            <p class="eyebrow">Work in progress · iOS · Android</p>
+            <h2 id="nutrimons-title">Nutrimons</h2>
+          </div>
+        </div>
+        <p class="intro">A mobile game that turns grocery barcodes into monsters shaped by the food’s nutrition.</p>
+      </header>
+      <div class="nutrimons-gallery" aria-label="Nutrimons app screenshots">
+        <figure>
+          <img src="/assets/images/nutrimons-dex.webp" width="1080" height="1920"
+            alt="The Nutrimons collection, with caught monsters and silhouettes for undiscovered entries." loading="lazy">
+          <figcaption>Build your dex</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/images/nutrimons-scan.webp" width="1080" height="1920"
+            alt="A pixel monster appears over a food package after its barcode is scanned." loading="lazy">
+          <figcaption>Scan a grocery</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/images/nutrimons-ar-catch.webp" width="1080" height="1920"
+            alt="A monster anchored over a package in the AR tug-of-war catch mode." loading="lazy">
+          <figcaption>Catch it in AR</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/images/nutrimons-ar-battle.webp" width="1080" height="1920"
+            alt="Two pixel monsters battle over a real grocery package in the camera view." loading="lazy">
+          <figcaption>Fight in AR</figcaption>
+        </figure>
+      </div>
+      <div class="details-grid">
+        <section class="copy">
+          <h3>From barcode to monster team</h3>
+          <p>Each scan looks up the product and its nutrition through the Open Food Facts API. The food’s nutrients help shape the monster’s stats, while its category helps set its type. The same barcode always leads to the same creature, tying the collection to real products you discover.</p>
+          <p>Catch monsters for your dex, raise a team and scan a friend’s team QR code to start a duel.</p>
+          <dl class="tech"><dt>Built with</dt><dd>Flutter, Firebase, Google ML Kit for Android barcode scanning, Apple Vision for iOS scanning, the Open Food Facts API, and native AR via ARCore (Android) and ARKit (iOS).</dd></dl>
+          <a class="text-link" href="/#nutrimons">See Nutrimons on the workbench</a>
+        </section>
+        <section class="copy">
+          <h3>Fighting in the camera view</h3>
+          <p>On supported phones, ARCore or ARKit tracks the space around a package and anchors the monster beside it. Move the phone or turn away and the creature stays where it appeared. Choose Fight and an animated battle plays over the live camera view.</p>
+          <p>Barcode recognition runs on the device. The native AR scanner shares its camera frames with barcode scanning, then keeps the monster in place with a world anchor.</p>
+        </section>
+      </div>
+    </article>
+
     <section class="case" id="more-projects" aria-labelledby="more-title">
       <header class="case-head">
         <h2 id="more-title">More projects</h2>
@@ -198,11 +249,6 @@
           <h3>my friend from</h3>
           <p>A contact list can tell me someone’s name and still leave me wondering where we met. I built an early version of a travel address book that saves where we met and where they live now. It works offline, keeps the information on the phone and lets me choose when to share my own contact details by QR code.</p>
           <a class="text-link" href="/#my-friend-from">Read more about my friend from</a>
-        </article>
-        <article class="project copy" id="nutrimons">
-          <h3>Nutrimons</h3>
-          <p>I wanted to make nutrition data something you could play with. In this early build, scanning a food barcode hatches a monster shaped by the product’s nutrients. The groceries you encounter become part of what you can collect and use in a duel.</p>
-          <a class="text-link" href="/#nutrimons">Read more about Nutrimons</a>
         </article>
       </div>
     </section>
