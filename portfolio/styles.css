@@ -199,6 +199,17 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); }
 .copy p { color: var(--muted); }
 .text-link { justify-self: start; color: var(--red); font-weight: 700; }
 
+.tech {
+  margin: 0;
+  padding-left: .75rem;
+  border-left: 2px solid var(--rule);
+  font-size: .9375rem;
+  line-height: 1.45;
+}
+
+.tech dt { font-weight: 700; }
+.tech dd { margin: .15rem 0 0; color: var(--muted); }
+
 .kleer-shots {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
