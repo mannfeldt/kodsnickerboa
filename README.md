@@ -4,7 +4,8 @@ The portfolio page at <https://kodsnickerboa.com>, plus the pages the apps link
 to (privacy policies, download and invite links) and the web versions of Slotcars
 at `/slotcars/`, Widas Mattekasse at `/widasmattekasse/`, Fikakassan at
 `/fikakassan/`, and Tinggal at `/tinggal/`.
-Emil's CV is at `/cv/`.
+Emil's product portfolio is at `/portfolio/` (English) and `/portfolio/sv/` (Swedish).
+Both link to his CV at `/cv/`.
 
 This is a dependency-free static site. The deployable files are served
 directly from the repository root; there is no framework, package manager, or
@@ -170,7 +171,9 @@ to serve it.
 
 Emil's CV is at <https://kodsnickerboa.com/cv/>, in English and Swedish, with a
 light and a dark mode. It is written by hand in `cv/index.html`, `cv/styles.css`
-and `cv/script.js`. The page is not linked from the portfolio.
+and `cv/script.js`. The CV and product portfolio link to each other in the selected language.
+The portfolio has one HTML file per language and a shared stylesheet under `portfolio/`.
+Update both HTML files when changing a case.
 
 - Both languages are in the markup. Every translated text appears twice, once with
   `lang="en"` and once with `lang="sv"`, and CSS hides the one that is not chosen.
