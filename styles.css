@@ -493,6 +493,17 @@ h2 {
   --media-bg: #4b372b;
 }
 
+.piece__media--promopalsbali {
+  --media-bg: #283b34;
+  display: grid;
+  justify-items: center;
+}
+
+.piece__media--promopalsbali img {
+  width: min(100%, 15rem);
+  border-radius: 1rem;
+}
+
 .shot {
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
 }

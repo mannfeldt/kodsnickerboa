@@ -304,6 +304,23 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); }
 .case-app h2 { font-size: clamp(2.45rem, 6vw, 5.35rem); }
 .case-app .eyebrow { margin-bottom: .35rem; }
 
+.case-split__stories {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.case-phone {
+  padding: clamp(1rem, 3vw, 2rem);
+  border-radius: .9rem;
+  background: #283b34;
+}
+
+.case-phone img {
+  width: min(100%, 15rem);
+  margin-inline: auto;
+  border-radius: 1rem;
+}
+
 .nutrimons-gallery {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
