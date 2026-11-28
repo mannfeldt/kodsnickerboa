@@ -210,6 +210,53 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); }
 .tech dt { font-weight: 700; }
 .tech dd { margin: .15rem 0 0; color: var(--muted); }
 
+.kleer-usage {
+  display: grid;
+  gap: .65rem;
+  margin-top: .45rem;
+  padding-top: .8rem;
+  border-top: 1px solid var(--rule);
+}
+
+.kleer-usage__mau {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: .45rem;
+  line-height: 1.25;
+}
+
+.kleer-usage__mau strong {
+  color: var(--red-deep);
+  font: 800 1.85rem/1.15 var(--display);
+}
+
+.kleer-stores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9.5rem), 1fr));
+  gap: .55rem;
+  padding: 0;
+  list-style: none;
+}
+
+.kleer-stores li {
+  padding: .55rem .7rem;
+  border: 1px solid var(--rule);
+  border-radius: .5rem;
+  background: #fffdfa;
+  font-size: .875rem;
+  line-height: 1.4;
+}
+
+.kleer-stores a {
+  display: inline-block;
+  margin-bottom: .18rem;
+  font-size: 1rem;
+}
+
+.kleer-stores strong { color: var(--ink); }
+.kleer-usage__date { font-size: .8125rem; }
+
 .kleer-shots {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -219,41 +266,24 @@ h3 { font-size: clamp(1.4rem, 2.5vw, 1.9rem); }
   border-radius: .85rem;
 }
 
-.placeholder {
-  overflow: hidden;
-  background: var(--paper);
-  border: 1px dashed #9c7e68;
-  border-radius: .45rem;
+.kleer-shots a {
+  display: block;
+  border-radius: .6rem;
 }
 
-.placeholder__art {
-  display: grid;
-  place-content: center;
-  gap: .32rem;
-  min-height: 3rem;
-  aspect-ratio: 1.45;
-  background: repeating-linear-gradient(135deg, #f6eee4 0 8px, #ede0d2 8px 9px);
+.kleer-shots img {
+  width: 100%;
+  border-radius: inherit;
 }
 
-.placeholder__art span {
-  width: 2.2rem;
-  height: .22rem;
-  background: #ad8873;
-  border-radius: .4rem;
-}
-
-.placeholder__art span:nth-child(2) { width: 1.6rem; }
-.placeholder__art span:nth-child(3) { width: 1.9rem; }
-
-.placeholder figcaption {
-  display: grid;
-  gap: .26rem;
-  padding: .48rem .55rem .6rem;
+.kleer-shots figcaption {
+  margin-top: .55rem;
+  color: var(--ink);
   font-size: .875rem;
+  font-weight: 700;
   line-height: 1.25;
-  overflow-wrap: anywhere;
+  text-align: center;
 }
-.placeholder figcaption span { color: var(--muted); }
 
 .photo img, .race img { width: 100%; border-radius: .75rem; }
 .photo figcaption { margin-top: .4rem; color: var(--muted); font-size: .875rem; }
